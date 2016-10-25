@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="pokemongo" size="0.225000 0.168750" />
+    <ImageTarget name="hololens" size="0.225000 0.168750" />
+    <ImageTarget name="googleglass" size="0.225000 0.168750" />
+    <ImageTarget name="meta1" size="0.225000 0.168750" />
+    <ImageTarget name="arquake" size="0.225000 0.168750" />
+    <ImageTarget name="artoolkit" size="0.225000 0.168750" />
+    <ImageTarget name="virtualfixtures" size="0.225000 0.168750" />
+    <ImageTarget name="arterm" size="0.225000 0.168750" />
+    <ImageTarget name="eyetap" size="0.226000 0.169500" />
+    <ImageTarget name="videoplace" size="0.225000 0.168750" />
+    <ImageTarget name="damocles" size="0.225000 0.168750" />
+  </Tracking>
+</QCARConfig>
