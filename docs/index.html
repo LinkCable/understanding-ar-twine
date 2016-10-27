@@ -1902,7 +1902,7 @@ Macro.add(['removeHUD','showHUD','hideHUD'], {
 });
 
 
-</script><tw-passagedata pid="1" name="Start" tags="" position="512,300">
+</script><tw-passagedata pid="1" name="Start" tags="" position="513,297">
 &lt;center&gt;
 &lt;h2&gt;Sword of Damocles&lt;/h2&gt;
 &lt;/center&gt;
@@ -1991,8 +1991,6 @@ Follow the digital trail from the paper brochure to digital world. Learn more ab
 	&lt;&lt;set _tObject.eventName to _tName&gt;&gt;
 	&lt;&lt;set _tObject.referenceName to _tTarget&gt;&gt;
 	&lt;&lt;set _tObject.passageName to _tPassage&gt;&gt;
-			   &lt;&lt;print _tPassage&gt;&gt;
-	
 	&lt;&lt;set _tObject.initPassage to false&gt;&gt;
 	
 	&lt;&lt;set _tTriggerString to &quot;trigger=radius:0.25;event:&quot;+_tTrigger+&quot;;&quot;&gt;&gt;
@@ -2046,6 +2044,7 @@ $(&quot;#ttttttt&quot;).attr(&quot;id&quot;, TempVariables.ttt);
 		&lt;&lt;if _rfcGoto isnot null&gt;&gt;
 		   &lt;&lt;replace &quot;#hudElem&quot;&gt;&gt;Look at the brochure&lt;&lt;/replace&gt;&gt;
 		   &lt;&lt;replace &quot;#hudElem2&quot;&gt;&gt;Look at the brochure&lt;&lt;/replace&gt;&gt;
+		   &lt;&lt;print $trackableKeys[10]&gt;&gt;
 			&lt;&lt;goto _rfcGoto.passageName&gt;&gt;
 		&lt;&lt;/if&gt;&gt;
     &lt;&lt;/if&gt;&gt;
