@@ -1,13 +1,14 @@
 <tw-storydata name="understanding-ar" startnode="1" creator="Twine" creator-version="2.0.11" ifid="65CD69EF-27B2-4D0A-9464-A2006DEAE27C" format="OldFashioned" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">// store the key somewhere
-//let $keyElem = jQuery(document.createElement());
-//$keyElem.id = "vuforiakey";
-//$keyElem.append("key.txt").insertBefore('#argon-aframe');
+
+let $keyElem = jQuery(document.createElement());
+$keyElem.id = "vuforiakey";
+$keyElem.append("docs/key.txt").insertBefore('#argon-aframe');
 
 // set up vuforia, using that key and the url to the dataset
 $('#argon-aframe').attr({
 	"vuforiakey" : "#vuforiakey",
-	"vuforiadataset__storybook" : 
+	"vuforiadataset__storybook" :
 	"src:url(resources/datasets/storybook.xml);"
 });
 
@@ -30,7 +31,7 @@ predisplay['#argon-passage-cleanup'] = task => {
       &lt;/a-assets&gt;
 &lt;&lt;/append&gt;&gt;
 
-&lt;&lt;append &quot;#passage-entities&quot;&gt;&gt; 
+&lt;&lt;append &quot;#passage-entities&quot;&gt;&gt;
         &lt;a-sphere position=&quot;0 1.25 -1&quot; radius=&quot;1.25&quot; color=&quot;#EF2D5E&quot; &gt;&lt;/a-sphere&gt;
         &lt;a-box id=&quot;bluebox&quot; position=&quot;-1 0.5 1&quot; rotation=&quot;0 45 0&quot; width=&quot;1&quot; height=&quot;1&quot; depth=&quot;1&quot;  color=&quot;#4CC3D9&quot; &gt;&lt;/a-box&gt;
 &lt;&lt;/append&gt;&gt;</tw-passagedata>
