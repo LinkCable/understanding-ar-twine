@@ -1991,6 +1991,7 @@ Follow the digital trail from the paper brochure to digital world. Learn more ab
 	&lt;&lt;set _tObject.eventName to _tName&gt;&gt;
 	&lt;&lt;set _tObject.referenceName to _tTarget&gt;&gt;
 	&lt;&lt;set _tObject.passageName to _tPassage&gt;&gt;
+	
 	&lt;&lt;set _tObject.initPassage to false&gt;&gt;
 	
 	&lt;&lt;set _tTriggerString to &quot;trigger=radius:0.25;event:&quot;+_tTrigger+&quot;;&quot;&gt;&gt;
@@ -2002,6 +2003,9 @@ Follow the digital trail from the paper brochure to digital world. Learn more ab
 
 &lt;&lt;script&gt;&gt;
 $(&quot;#ttttttt&quot;).attr(&quot;id&quot;, TempVariables.ttt);
+
+
+
 &lt;&lt;/script&gt;&gt;
 
 &lt;&lt;set _tempStr to &quot;css-object=&#39;div:#gvulink-&quot; + _t + &quot;&#39;&quot;&gt;&gt;
@@ -2041,6 +2045,7 @@ $(&quot;#ttttttt&quot;).attr(&quot;id&quot;, TempVariables.ttt);
 		&lt;&lt;if _rfcGoto isnot null&gt;&gt;
 		   &lt;&lt;replace &quot;#hudElem&quot;&gt;&gt;Look at the brochure&lt;&lt;/replace&gt;&gt;
 		   &lt;&lt;replace &quot;#hudElem2&quot;&gt;&gt;Look at the brochure&lt;&lt;/replace&gt;&gt;
+		   _rfcGoto.passageName
 			&lt;&lt;goto _rfcGoto.passageName&gt;&gt;
 		&lt;&lt;/if&gt;&gt;
     &lt;&lt;/if&gt;&gt;
@@ -2067,12 +2072,7 @@ Config.saves.autoload = false;
 
 &lt;a-asset-item id=&quot;damocles-mtl&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/damocles/damocles.mtl&quot;&gt;&lt;/a-asset-item&gt;
 
-&lt;&lt;/addAsset&gt;&gt;
-
-
-hi
-
-</tw-passagedata>
+&lt;&lt;/addAsset&gt;&gt;</tw-passagedata>
 <tw-passagedata pid="3" name="damocles" tags="" position="529,425">This is a test</tw-passagedata>
 </tw-storydata>
 </div>
