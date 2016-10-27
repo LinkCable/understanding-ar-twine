@@ -2074,7 +2074,18 @@ Config.saves.autoload = false;
 &lt;a-asset-item id=&quot;damocles-mtl&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/damocles/damocles.mtl&quot;&gt;&lt;/a-asset-item&gt;
 
 &lt;&lt;/addAsset&gt;&gt;</tw-passagedata>
-<tw-passagedata pid="3" name="damocles" tags="" position="529,425"> &lt;&lt;append3d _tn&gt;&gt;
+<tw-passagedata pid="3" name="damocles" tags="" position="529,425">&lt;&lt;set $onPages = [&quot;damocles&quot;]&gt;&gt;
+&lt;&lt;set _tObject to $trackables[&quot;damocles&quot;]&gt;&gt;
+&lt;&lt;set _tn to _tObject.entityName&gt;&gt;
+&lt;&lt;set _ts to _tObject.selector&gt;&gt;
+
+
+&lt;&lt;if _tObject.initPassage&gt;&gt;
+&lt;&lt;else&gt;&gt;
+  &lt;&lt;set _tObject.initPassage to true&gt;&gt;
+
+
+&lt;&lt;append3d _tn&gt;&gt;
 	
 	&lt;ar-frame id=&quot;frame1&quot; trackvisibility=&quot;true&quot; visible=&quot;false&quot; parent=&quot;vuforia.storybook.damocles&quot; position=&quot;0 0 0&quot; rotation=&quot;0 0 0&quot;&gt;
        &lt;a-entity scale=&quot;0.03 0.03 0.03&quot;&gt;
