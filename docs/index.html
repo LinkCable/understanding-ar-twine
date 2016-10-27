@@ -1902,7 +1902,7 @@ Macro.add(['removeHUD','showHUD','hideHUD'], {
 });
 
 
-</script><tw-passagedata pid="1" name="Start" tags="" position="513,296">
+</script><tw-passagedata pid="1" name="Start" tags="" position="239,316">
 &lt;center&gt;
 &lt;h2&gt;Understanding AR&lt;/h2&gt;
 &lt;/center&gt;
@@ -2056,7 +2056,7 @@ $(&quot;#ttttttt&quot;).attr(&quot;id&quot;, TempVariables.ttt);
 &lt;&lt;/for&gt;&gt;	
 &lt;&lt;/onEvent&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;</tw-passagedata>
-<tw-passagedata pid="2" name="StoryInit" tags="" position="364,274">/* we want to use vuforia for this story */
+<tw-passagedata pid="2" name="StoryInit" tags="" position="240,191">/* we want to use vuforia for this story */
 &lt;&lt;initVuforia &quot;http://philkt.me/understanding-ar-twine/key.txt&quot;&gt;&gt;
 &lt;&lt;vuforiaDataset storybook &quot;http://philkt.me/understanding-ar-twine/datasets/storybook.xml&quot;&gt;&gt;
 
@@ -2069,12 +2069,19 @@ Config.saves.autoload = false;
 
 &lt;&lt;addAsset&gt;&gt;
 
-&lt;a-asset-item id=&quot;damocles-obj&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/damocles/damocles.obj&quot;&gt;&lt;/a-asset-item&gt;
-
-&lt;a-asset-item id=&quot;damocles-mtl&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/damocles/damocles.mtl&quot;&gt;&lt;/a-asset-item&gt;
+        &lt;a-asset-item id=&quot;damocles-obj&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/damocles/damocles.obj&quot;&gt;&lt;/a-asset-item&gt;
+        &lt;a-asset-item id=&quot;damocles-mtl&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/damocles/damocles.mtl&quot;&gt;&lt;/a-asset-item&gt;
+        &lt;a-asset-item id=&quot;artoolkit-obj&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/artoolkit/artoolkit.obj&quot;&gt;&lt;/a-asset-item&gt;
+        &lt;a-asset-item id=&quot;artoolkit-mtl&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/artoolkit/artoolkit.mtl&quot;&gt;&lt;/a-asset-item&gt;
+        &lt;a-asset-item id=&quot;googleglass-obj&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/google-glass/google-glass.obj&quot;&gt;&lt;/a-asset-item&gt;
+        &lt;a-asset-item id=&quot;googleglass-mtl&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/google-glass/google-glass.mtl&quot;&gt;&lt;/a-asset-item&gt;
+        &lt;a-asset-item id=&quot;pokemongo-obj&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/pokemon-go/pokemon-go.obj&quot;&gt;&lt;/a-asset-item&gt;
+        &lt;a-asset-item id=&quot;pokemongo-mtl&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/pokemon-go/pokemon-go.mtl&quot;&gt;&lt;/a-asset-item&gt;
+        &lt;a-asset-item id=&quot;videoplace-obj&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/videoplace/videplace.obj&quot;&gt;&lt;/a-asset-item&gt;
+        &lt;a-asset-item id=&quot;videoplace-mtl&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/videoplace/videplace.mtl&quot;&gt;&lt;/a-asset-item&gt;
 
 &lt;&lt;/addAsset&gt;&gt;</tw-passagedata>
-<tw-passagedata pid="3" name="damocles" tags="" position="529,425">&lt;&lt;set $onPages = [&quot;damocles&quot;]&gt;&gt;&lt;&lt;nobr&gt;&gt;
+<tw-passagedata pid="3" name="damocles" tags="" position="511,115">&lt;&lt;set $onPages = [&quot;damocles&quot;]&gt;&gt;&lt;&lt;nobr&gt;&gt;
 &lt;&lt;set _tObject to $trackables[&quot;damocles&quot;]&gt;&gt;
 &lt;&lt;set _tn to _tObject.entityName&gt;&gt;
 &lt;&lt;set _ts to _tObject.selector&gt;&gt;
@@ -2092,6 +2099,106 @@ Config.saves.autoload = false;
 
 
         &lt;a-entity obj-model=&quot;obj: #damocles-obj; mtl: #damocles-mtl&quot;&gt;&lt;/a-entity&gt;
+
+       &lt;/a-entity&gt;
+	  
+&lt;&lt;/append3d&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
+</tw-passagedata>
+<tw-passagedata pid="4" name="artoolkit" tags="" position="375,244">&lt;&lt;set $onPages = [&quot;artoolkit&quot;]&gt;&gt;&lt;&lt;nobr&gt;&gt;
+&lt;&lt;set _tObject to $trackables[&quot;artoolkit&quot;]&gt;&gt;
+&lt;&lt;set _tn to _tObject.entityName&gt;&gt;
+&lt;&lt;set _ts to _tObject.selector&gt;&gt;
+
+
+&lt;&lt;if _tObject.initPassage&gt;&gt;
+&lt;&lt;else&gt;&gt;
+  &lt;&lt;set _tObject.initPassage to true&gt;&gt;
+
+
+&lt;&lt;append3d _tn&gt;&gt;
+	
+
+       &lt;a-entity scale=&quot;0.03 0.03 0.03&quot;&gt;
+
+
+        &lt;a-entity obj-model=&quot;obj: #artoolkit-obj; mtl: #artoolkit-mtl&quot;&gt;&lt;/a-entity&gt;
+
+       &lt;/a-entity&gt;
+	  
+&lt;&lt;/append3d&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
+</tw-passagedata>
+<tw-passagedata pid="5" name="google-glass" tags="" position="377,113">&lt;&lt;set $onPages = [&quot;google-glass&quot;]&gt;&gt;&lt;&lt;nobr&gt;&gt;
+&lt;&lt;set _tObject to $trackables[&quot;google-glass&quot;]&gt;&gt;
+&lt;&lt;set _tn to _tObject.entityName&gt;&gt;
+&lt;&lt;set _ts to _tObject.selector&gt;&gt;
+
+
+&lt;&lt;if _tObject.initPassage&gt;&gt;
+&lt;&lt;else&gt;&gt;
+  &lt;&lt;set _tObject.initPassage to true&gt;&gt;
+
+
+&lt;&lt;append3d _tn&gt;&gt;
+	
+
+       &lt;a-entity scale=&quot;0.03 0.03 0.03&quot;&gt;
+
+
+        &lt;a-entity obj-model=&quot;obj: #googleglass-obj; mtl: #googleglass-mtl&quot;&gt;&lt;/a-entity&gt;
+
+       &lt;/a-entity&gt;
+	  
+&lt;&lt;/append3d&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
+</tw-passagedata>
+<tw-passagedata pid="6" name="pokemon-go" tags="" position="376,387">&lt;&lt;set $onPages = [&quot;pokemon-go&quot;]&gt;&gt;&lt;&lt;nobr&gt;&gt;
+&lt;&lt;set _tObject to $trackables[&quot;pokemon-go&quot;]&gt;&gt;
+&lt;&lt;set _tn to _tObject.entityName&gt;&gt;
+&lt;&lt;set _ts to _tObject.selector&gt;&gt;
+
+
+&lt;&lt;if _tObject.initPassage&gt;&gt;
+&lt;&lt;else&gt;&gt;
+  &lt;&lt;set _tObject.initPassage to true&gt;&gt;
+
+
+&lt;&lt;append3d _tn&gt;&gt;
+	
+
+       &lt;a-entity scale=&quot;0.03 0.03 0.03&quot;&gt;
+
+
+        &lt;a-entity obj-model=&quot;obj: #pokemongo-obj; mtl: #pokemongo-mtl&quot;&gt;&lt;/a-entity&gt;
+
+       &lt;/a-entity&gt;
+	  
+&lt;&lt;/append3d&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
+</tw-passagedata>
+<tw-passagedata pid="7" name="videoplace" tags="" position="513,243">&lt;&lt;set $onPages = [&quot;videoplace&quot;]&gt;&gt;&lt;&lt;nobr&gt;&gt;
+&lt;&lt;set _tObject to $trackables[&quot;videoplace&quot;]&gt;&gt;
+&lt;&lt;set _tn to _tObject.entityName&gt;&gt;
+&lt;&lt;set _ts to _tObject.selector&gt;&gt;
+
+
+&lt;&lt;if _tObject.initPassage&gt;&gt;
+&lt;&lt;else&gt;&gt;
+  &lt;&lt;set _tObject.initPassage to true&gt;&gt;
+
+
+&lt;&lt;append3d _tn&gt;&gt;
+	
+
+       &lt;a-entity scale=&quot;0.03 0.03 0.03&quot;&gt;
+
+
+        &lt;a-entity obj-model=&quot;obj: #videoplace-obj; mtl: #videoplace-mtl&quot;&gt;&lt;/a-entity&gt;
 
        &lt;/a-entity&gt;
 	  
