@@ -1991,6 +1991,7 @@ Follow the digital trail from the paper brochure to digital world. Learn more ab
 	&lt;&lt;set _tObject.eventName to _tName&gt;&gt;
 	&lt;&lt;set _tObject.referenceName to _tTarget&gt;&gt;
 	&lt;&lt;set _tObject.passageName to _tPassage&gt;&gt;
+			   &lt;&lt;print _tPassage&gt;&gt;
 	
 	&lt;&lt;set _tObject.initPassage to false&gt;&gt;
 	
@@ -2045,7 +2046,6 @@ $(&quot;#ttttttt&quot;).attr(&quot;id&quot;, TempVariables.ttt);
 		&lt;&lt;if _rfcGoto isnot null&gt;&gt;
 		   &lt;&lt;replace &quot;#hudElem&quot;&gt;&gt;Look at the brochure&lt;&lt;/replace&gt;&gt;
 		   &lt;&lt;replace &quot;#hudElem2&quot;&gt;&gt;Look at the brochure&lt;&lt;/replace&gt;&gt;
-		   &lt;&lt;print _rfcGoto.passageName&gt;&gt;
 			&lt;&lt;goto _rfcGoto.passageName&gt;&gt;
 		&lt;&lt;/if&gt;&gt;
     &lt;&lt;/if&gt;&gt;
