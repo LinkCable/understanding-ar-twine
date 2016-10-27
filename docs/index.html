@@ -71,7 +71,7 @@ e=n.propHooks[b]),void 0!==c?e&&"set"in e&&void 0!==(d=e.set(a,c,b))?d:a[b]=c:e&
 /*
  * jQuery throttle / debounce - v1.1 - 3/7/2010
  * http://benalman.com/projects/jquery-throttle-debounce-plugin/
- *
+ * 
  * Copyright (c) 2010 "Cowboy" Ben Alman
  * Dual licensed under the MIT and GPL licenses.
  * http://benalman.com/about/license/
@@ -609,7 +609,7 @@ html {
 	/* added for OLDFASHIONED */
 	border: 0 auto;
     pointer-events: auto;
-	/* overflow-y: auto; */
+	/* overflow-y: auto; */ 
 	height: 100%;
 }
 
@@ -1526,7 +1526,7 @@ html.debug-view .debug[data-name][data-type|="special"]:before {
 	<div id="store-area" hidden><tw-storydata name="understanding-ar" startnode="1" creator="Twine" creator-version="2.0.11" ifid="65CD69EF-27B2-4D0A-9464-A2006DEAE27C" format="OldFashioned" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
 
 
-</style><script role="script" id="twine-user-script" type="text/twine-javascript">Config.ui.stowBarInitially = true;
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">Config.ui.stowBarInitially = true; 
 Config.saves.autoload = false;
 Config.saves.autosave = false;
 
@@ -1534,7 +1534,7 @@ var storyEvents = [];
 var passageEvents = [];
 
 predisplay['#argon-passage-cleanup'] = function (task) {
-		for (var i=0; i<passageEvents.length; i++) {
+		for (var i=0; i<passageEvents.length; i++) { 
 			var e = passageEvents[i];
 			e.target.removeEventListener(e.eventName, e.callback);
 		}
@@ -1552,53 +1552,6 @@ function getComponentAttrFromArg(arg) {
 		return arg.slice(0,eq) + ":" + arg.slice(eq+1) + ";";
 	}
 }
-
-//var panoramaRealityURL = "http://argonjs.io/argon-aframe/resources/reality/panorama/index.html"
-Macro.add(['requestPanoramaReality'], {
-	handler() {
-		if (this.args.length < 2) {
-			return this.error('required parameters are name and url');
-		}
-		console.log("new reality '" + this.args[0] + "', url: " + this.args[1]);
-		$('#argon-aframe').attr("desiredreality", "name:'" + this.args[0] + "';src:url(" + this.args[1] + ");");
-	}
-});
-
-Macro.add(['createPanorama'], {
-	handler() {
-		if (this.args.length < 3) {
-				return this.error('required parameters are {name, dataset url, LLA}, plus other optional additional parameters');
-		}
-		console.log("new panorama '" + this.args[0] + "', url: " + this.args[1]);
-		var argValue = "src:url(" + this.args[1] + ");lla:" + this.args[2] + ";";
-
-		for (var i = 3; i<this.args.length; i++) {
-			argValue += getComponentAttrFromArg(this.args[i]);
-		}
-
-		$('#argon-aframe').attr("panorama__" + this.args[0], argValue);
-	}
-});
-
-Macro.add(['showPanorama'], {
-	handler() {
-		if (this.args.length < 1) {
-			return this.error('parameter is panorama name');
-		}
-		console.log("show panorama '" + this.args[0]);
-		$('#argon-aframe')[0].emit("showpanorama", { name: this.args[0] });
-	}
-});
-
-Macro.add(['deletePanorama'], {
-	handler() {
-		if (this.args.length < 1) {
-			return this.error('parameter is panorama name');
-		}
-		console.log("remove panorama '" + this.args[0]);
-		$('#argon-aframe').removeAttr("panorama__" + this.args[0]);
-	}
-});
 
 function setAttrFromArg(target, arg) {
 	var eq = arg.indexOf("=");
@@ -1626,17 +1579,17 @@ Macro.add(['removeEntity','showEntity','hideEntity'], {
 			var $container = $("#story-entities").add("#passage-entities");
 
 			var $targets = $container.find("#" + targetId);
-
+			
 			if ($targets.length > 0) {
 				switch (this.name) {
 				case "removeEntity":
 					$container.remove($targets);
 					break;
-
+					
 				case "showEntity":
 					$targets.attr("visible", "true");
 					break;
-
+				
 				case "hideEntity":
 					$targets.attr("visible", "false");
 					break;
@@ -1645,46 +1598,7 @@ Macro.add(['removeEntity','showEntity','hideEntity'], {
 				return this.error('passage "' + targetId + '" does not exist.');
 			}
 		}
-});
-
-// <<createGeolocatedEntity name story|passage "lla"  * >>
-Macro.add(['createGeolocationEntity'], {
-		handler() {
-			if (this.args.length < 3) {
-				return this.error('need selector, name and LLA');
-			}
-
-			var targetId = this.args[0];
-
-			var $container;
-			if (this.args[1] === "story") {
-				$container = $("#story-entities");
-			} else if (this.args[1] === "passage") {
-				$container = $("#passage-entities");
-			} else {
-				return this.error('3D content type must be "story" or "passage": "' + this.args[1] + '" invalid');
-			}
-
-			var $targets = $container.find("#" + targetId);
-
-			if ($targets.length > 0) {
-				return this.error('passage "' + targetId + '" already exists.');
-			}
-
-			$targets = jQuery(document.createElement('ar-geopose'));
-			$targets.attr({
-				"id": targetId,
-				"lla": this.args[2]
-			});
-
-
-			for (var i = 3; i<this.args.length; i++) {
-				setAttrFromArg($targets, this.args[i]);
-			}
-
-			$container.append($targets);
-		}
-});
+});		
 
 // <<createReferenceEntity name story|passage "parent frame" * >>
 Macro.add(['createReferenceFrameEntity'], {
@@ -1708,7 +1622,7 @@ Macro.add(['createReferenceFrameEntity'], {
 
 			if ($targets.length > 0) {
 				return this.error('passage "' + targetId + '" already exists.');
-			}
+			} 
 
 			$targets = jQuery(document.createElement('ar-frame'));
 			$targets.attr({
@@ -1720,7 +1634,7 @@ Macro.add(['createReferenceFrameEntity'], {
 				setAttrFromArg($targets, this.args[i]);
 			}
 
-			$container.append($targets);
+			$container.append($targets);	
 		}
 });
 
@@ -1733,17 +1647,17 @@ Macro.add(['append3d', 'replace3d'], {
 			if (this.args.length < 1) {
 				return this.error('must specify entity name');
 			}
-
+			
 			var targetId = this.args[0];
 
 			// want to search both story and passage entities for the entity to manipulate
 			var $container = $("#story-entities").add("#passage-entities");
-
+			
 			var $targets = $container.find("#" + targetId);
 			if ($targets.length === 0) {
 				return this.error('passage "' + targetId + '" does not exist.');
-			}
-
+			} 
+			
 			if (this.name === 'replace3d') {
 				$targets.empty();
 			}
@@ -1779,7 +1693,7 @@ Macro.add(['addAsset'], {
 				var text = div.innerText;
 
   	            $assets.append(text);
-			}
+			}			
 		}
 });
 
@@ -1801,7 +1715,7 @@ Macro.add(['onEvent'], {
 			var $targets = targetId === "#argon-aframe" ? $container :  $container.find(targetId);
 			if ($targets.length === 0) {
 				return this.error('passage "' + targetId + '" does not exist.');
-			}
+			} 
 
 
 			if (this.args[1] === "story") {
@@ -1811,12 +1725,12 @@ Macro.add(['onEvent'], {
 			} else {
 				return this.error('3D content type must be "story" or "passage": "' + this.args[1] + '" invalid');
 			}
-
+			
 			var tempVar = false;
 			var varName = undefined;
 			if (this.args.length > 4) {
 				//	return this.error('variable name must start with $ or _: ' + this.args[1] + " " + this.args[2] + " " + this.args[3]);
-
+				
 				varName = this.args[4];
 				if (varName[0] === '_') {
 					tempVar = true;
@@ -1846,7 +1760,7 @@ Macro.add(['onEvent'], {
 				// if (Config.debug && curItem.name === 'next') {
 				// 	eventOutput = jQuery((new DebugView( // eslint-disable-line no-param-reassign
 				// 		eventOutput[0],
-				// 		'macro',
+				// 		'macro',			
 				// 		name,
 				// 		source
 				// 	)).output);
@@ -1876,7 +1790,7 @@ Macro.add(['onEvent'], {
 				}
 				eventList.push(newEvent);
 			}
-
+		
 	}
 });
 
@@ -1893,7 +1807,7 @@ Macro.add(["removeEvent"], {
 				if (e.name == eventName) {
 					e.target.removeEventListener(e.eventName, e.callback);
 					return false;
-				}
+				} 
 				return true;
 			};
 			storyEvents = storyEvents.filter(filterFunc);
@@ -1922,7 +1836,7 @@ Macro.add(["initVuforia"], {
 	}
 });
 
-Macro.add(["vuforiaDataset"], {
+Macro.add(["vuforiaDataset"], {	
 	handler () {
 		if (this.args.length < 2) {
 				return this.error('parameters are {id, dataset url}');
@@ -1933,7 +1847,7 @@ Macro.add(["vuforiaDataset"], {
 });
 
 // <<createHUD name [name-2]>>
-Macro.add(["createHUD"], {
+Macro.add(["createHUD"], {	
 	handler () {
 		if (this.args.length < 1) {
 				return this.error('parameters is one or two names for left (and right) hud elements');
@@ -1965,17 +1879,17 @@ Macro.add(['removeHUD','showHUD','hideHUD'], {
 			// want to search both story and passage entities for the entity to manipulate
 			var $container = $("#hud");
 			var $targets = $container.find("#" + targetId1).add($container.find("#" + targetId2));
-
+			
 			if ($targets.length > 0) {
 				switch (this.name) {
 				case "removeHUD":
 					$targets.remove();
 					break;
-
+					
 				case "showHUD":
 					targets.attr("visible", "true");
 					break;
-
+				
 				case "hideHUD":
 					targets.attr("visible", "false");
 					break;
@@ -1986,68 +1900,16 @@ Macro.add(['removeHUD','showHUD','hideHUD'], {
 		}
 });
 
-///
-/// actual story javascript
-///
+</script><tw-passagedata pid="1" name="Start" tags="" position="512,300">
+&lt;center&gt;
+&lt;h2&gt;Sword of Damocles&lt;/h2&gt;
+&lt;/center&gt;
 
-var $scratch = jQuery(document.createElement('div'));
-$scratch.attr("id", "scratch");
-$scratch.hide();
-$scratch.insertAfter("#argon-aframe");
+Follow the digital trail from the paper brochure to digital world. Learn more about the people, projects and ideas that make up the GVU research community.
 
-$scratch.append("<div id='Page_01-video-webpage' class='webPage'><h1><center>Welcome To GVU 2015</center></h1><iframe id='Page_01-video-iframe' width='500' height='400' src='https://www.youtube-nocookie.com/embed/hMWgb6LVyRE?rel=0&autoplay=1&playsinline=1&enablejsapi=true' frameborder='0' allowfullscreen></iframe></div>");
+&lt;p id=&quot;message&quot;&gt;&lt;em&gt;Loading ...&lt;/em&gt;&lt;/p&gt;
 
-var tag = document.createElement('script');
-tag.id = "Page_01-youtubescript";
-tag.src = 'https://www.youtube.com/iframe_api';
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-State.variables.page1VideoPlayer = null;
-State.variables.page1VideoPlaying = false;
-
-var onPlayerReady = function(event) {
-    document.getElementById('Page_01-video-webpage').style.borderColor = '#FF6D00';
-};
-var onPlayerStateChange = function(event) {
-    var playerStatus = event.data;
-	  var color;
-    if (playerStatus == -1) {
-      color = "#37474F"; // unstarted = gray
-    } else if (playerStatus == 0) {
-			console.log("VIDEO ENDED");
-
-	  	State.variables.page1VideoPlaying = false;
-      color = "#FFFF00"; // ended = yellow
-    } else if (playerStatus == 1) {
-			console.log("VIDEO STARTED PLAYING");
-
-  		State.variables.page1VideoPlaying = true;
-      color = "#33691E"; // playing = green
-    } else if (playerStatus == 2) {
-      color = "#DD2C00"; // paused = red
-    } else if (playerStatus == 3) {
-      color = "#AA00FF"; // buffering = purple
-    } else if (playerStatus == 5) {
-      color = "#FF6DOO"; // video cued = orange
-    }
-    if (color) {
-			console.log("changed video iframe to color " + color);
-      document.getElementById('Page_01-video-webpage').style.borderColor = color;
-    }
-};
-
-window.onYouTubeIframeAPIReady = function() {
-     State.variables.page1VideoPlayer = new window.YT.Player('Page_01-video-iframe', {
-        events: {
-          'onReady': onPlayerReady,
-          'onStateChange': onPlayerStateChange
-        }
-    });
-}
-
-</script><tw-passagedata pid="1" name="Sword of Damocles" tags="" position="512,300">
-&lt;center&gt;&lt;h2&gt;Sword of Damocles&lt;/h2&gt;&lt;/center&gt;Follow the digital trail from the paper brochure to digital world. Learn more about the people, projects and ideas that make up the GVU research community.&lt;p id=&quot;message&quot;&gt;&lt;em&gt;Loading ...&lt;/em&gt;&lt;/p&gt;&lt;&lt;nobr&gt;&gt;
+&lt;&lt;nobr&gt;&gt;
 
 /* create a spinner to show while loading */
 &lt;&lt;createReferenceFrameEntity spinningbox passage ar.user&gt;&gt;
@@ -2060,14 +1922,14 @@ window.onYouTubeIframeAPIReady = function() {
 
 /* if vuforia isn&#39;t available, tell the user we can&#39;t do
    anything on this platform */
-&lt;&lt;onEvent vuforiaNotAvailable passage &quot;#argon-aframe&quot; argon-vuforia-not-available &quot;_evt&quot;&gt;&gt;
+&lt;&lt;onEvent vuforiaNotAvailable passage &quot;#argon-aframe&quot; argon-vuforia-not-available &quot;_evt&quot;&gt;&gt; 
 	&lt;&lt;replace &quot;#message&quot;&gt;&gt;&lt;b&gt;Your browser does not support Vuforia AR tracking software, please consider using Argon4.&lt;/b&gt;&lt;&lt;/replace&gt;&gt;
     &lt;&lt;addclass &quot;#hudElem&quot; hide&gt;&gt;
     &lt;&lt;addclass &quot;#hudElem2&quot; hide&gt;&gt;
 	&lt;&lt;hideEntity spinningbox&gt;&gt;
 &lt;&lt;/onEvent&gt;&gt;
 
-/* follow the initialization steps, providing feedback
+/* follow the initialization steps, providing feedback 
    to the user along the way.  Many of these won&#39;t happen
    if the web app is set up correctly, but we pay attention
    anyway to help with debugging */
@@ -2075,20 +1937,20 @@ window.onYouTubeIframeAPIReady = function() {
 	&lt;&lt;replace &quot;#message&quot;&gt;&gt;Argon initialized, start vision tracker...&lt;&lt;/replace&gt;&gt;
 &lt;&lt;/onEvent&gt;&gt;
 
-&lt;&lt;onEvent vuforiaInit passage &quot;#argon-aframe&quot; argon-vuforia-initialized&gt;&gt;
+&lt;&lt;onEvent vuforiaInit passage &quot;#argon-aframe&quot; argon-vuforia-initialized&gt;&gt; 
 	&lt;&lt;replace &quot;#message&quot;&gt;&gt;Vision tracker initialized, downloading tracking data...&lt;&lt;/replace&gt;&gt;
 &lt;&lt;/onEvent&gt;&gt;
 
-&lt;&lt;onEvent vuforiaInitFailed passage &quot;#argon-aframe&quot; argon-vuforia-initialization-failed &quot;_evt&quot;&gt;&gt;
+&lt;&lt;onEvent vuforiaInitFailed passage &quot;#argon-aframe&quot; argon-vuforia-initialization-failed &quot;_evt&quot;&gt;&gt; 
 	&lt;&lt;replace &quot;#message&quot;&gt;&gt;Vision tracker failed to initialize: _evt.detail.error.message&lt;&lt;/replace&gt;&gt;
 &lt;&lt;/onEvent&gt;&gt;
 
-&lt;&lt;onEvent vuforiaLoadFailed passage &quot;#argon-aframe&quot; argon-vuforia-dataset-load-failed &quot;_evt&quot;&gt;&gt;
+&lt;&lt;onEvent vuforiaLoadFailed passage &quot;#argon-aframe&quot; argon-vuforia-dataset-load-failed &quot;_evt&quot;&gt;&gt; 
 	&lt;&lt;replace &quot;#message&quot;&gt;&gt;Failed to load tracking dataset: _evt.detail.error.message&lt;&lt;/replace&gt;&gt;
 &lt;&lt;/onEvent&gt;&gt;
 
-/* change the style of the small hud element used to
-   say &quot;look at the brochure&quot; in viewer mode */
+/* change the style of the small hud element used to 
+   say &quot;look at the brochure&quot; in viewer mode */ 
 &lt;&lt;onEvent enterVR story &quot;#argon-aframe&quot; enter-vr &quot;_evt&quot; &gt;&gt;
     &lt;&lt;addclass &quot;#hudElem&quot; viewerMode&gt;&gt;
     &lt;&lt;addclass &quot;#hudElem2&quot; viewerMode&gt;&gt;
@@ -2106,7 +1968,7 @@ window.onYouTubeIframeAPIReady = function() {
 &lt;&lt;addclass &quot;#hudElem&quot; topScreen&gt;&gt;
 &lt;&lt;addclass &quot;#hudElem2&quot; topScreen&gt;&gt;
 
-&lt;&lt;set $trackables to _evt.detail.trackables&gt;&gt;
+&lt;&lt;set $trackables to _evt.detail.trackables&gt;&gt; 
 &lt;&lt;set $trackableKeys to Object.keys(_evt.detail.trackables)&gt;&gt;
 &lt;&lt;set $trackablesFound to 0&gt;&gt;
 &lt;&lt;set $onPages = []&gt;&gt;
@@ -2116,12 +1978,9 @@ window.onYouTubeIframeAPIReady = function() {
 	&lt;&lt;set _tObject to $trackables[_t]&gt;&gt;
 	&lt;&lt;set _tEntity to _t+&quot;-entity&quot;&gt;&gt;
 	&lt;&lt;set _tTrigger to _t+&quot;-trigger&quot;&gt;&gt;
-	&lt;&lt;set _tTarget to &quot;vuforia.gvubrochure.&quot;+_t&gt;&gt;
+	&lt;&lt;set _tTarget to &quot;vuforia.storybook.&quot;+_t&gt;&gt;
 	&lt;&lt;set _tSelector to &quot;#&quot;+_tEntity&gt;&gt;
 	&lt;&lt;set _tName to &quot;targetStatus-&quot;+_t&gt;&gt;
-
-    /* all targets start with Page_xx */
-    &lt;&lt;set _tPassage to _t.slice(0,7)&gt;&gt;
 
 	&lt;&lt;set _tObject.entityName to _tEntity&gt;&gt;
 	&lt;&lt;set _tObject.triggerName to _tTrigger&gt;&gt;
@@ -2131,16 +1990,14 @@ window.onYouTubeIframeAPIReady = function() {
 	&lt;&lt;set _tObject.referenceName to _tTarget&gt;&gt;
 	&lt;&lt;set _tObject.passageName to _tPassage&gt;&gt;
 	&lt;&lt;set _tObject.initPassage to false&gt;&gt;
-
+	
 	&lt;&lt;set _tTriggerString to &quot;trigger=radius:0.25;event:&quot;+_tTrigger+&quot;;&quot;&gt;&gt;
-
+	
 	&lt;&lt;createReferenceFrameEntity _tEntity story _tTarget  trackvisibility=true visible=false _tTriggerString&gt;&gt;
 
 &lt;&lt;set _ttt to &quot;gvulink-&quot; + _t&gt;&gt;
-&lt;&lt;append &quot;#scratch&quot;&gt;&gt;
-&lt;div id=&quot;ttttttt&quot; class=&#39;gvulink&#39;&gt;&lt;a href=&quot;http://gvu.gatech.edu&quot;&gt;&lt;img width=&quot;100%&quot; height=&quot;100%&quot; src=&quot;http://bmaci.com/a4/twine/gvu-images/gvu.png&quot;&gt;
-&lt;/a&gt;&lt;/div&gt;
-&lt;&lt;/append&gt;&gt;
+
+
 &lt;&lt;script&gt;&gt;
 $(&quot;#ttttttt&quot;).attr(&quot;id&quot;, TempVariables.ttt);
 &lt;&lt;/script&gt;&gt;
@@ -2152,7 +2009,7 @@ $(&quot;#ttttttt&quot;).attr(&quot;id&quot;, TempVariables.ttt);
 &lt;/a-entity&gt;
 &lt;&lt;/append3d&gt;&gt;
 
-&lt;&lt;onEvent _tName story _tSelector referenceframe-statuschanged &quot;_evt&quot;&gt;&gt;
+&lt;&lt;onEvent _tName story _tSelector referenceframe-statuschanged &quot;_evt&quot;&gt;&gt; 
 &lt;&lt;set _rfc_name to _evt.detail.target.id&gt;&gt;
 &lt;&lt;if _rfc_name.endsWith(&quot;-entity&quot;)&gt;&gt;
   &lt;&lt;set _rfc_name to _rfc_name.slice(0,-7)&gt;&gt;
@@ -2165,7 +2022,7 @@ $(&quot;#ttttttt&quot;).attr(&quot;id&quot;, TempVariables.ttt);
 	 &lt;&lt;set _rfc_o to $trackables[$trackableKeys[_rfc_i]]&gt;&gt;
 	 &lt;&lt;set _rfc_t to _rfc_o.found&gt;&gt;
 	 &lt;&lt;if _rfc_t&gt;&gt;
-	 	&lt;&lt;set $trackablesFound = $trackablesFound + 1&gt;&gt;
+	 	&lt;&lt;set $trackablesFound = $trackablesFound + 1&gt;&gt;  
 		&lt;&lt;set _rfcGoto to _rfc_o&gt;&gt;
 		&lt;&lt;if $onPages.includes($trackableKeys[_rfc_i])&gt;&gt;
 			&lt;&lt;set _rfc_stay to true&gt;&gt;
@@ -2188,14 +2045,14 @@ $(&quot;#ttttttt&quot;).attr(&quot;id&quot;, TempVariables.ttt);
   &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/onEvent&gt;&gt;
-&lt;&lt;/for&gt;&gt;
+&lt;&lt;/for&gt;&gt;	
 &lt;&lt;/onEvent&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;</tw-passagedata>
 <tw-passagedata pid="2" name="StoryInit" tags="" position="364,274">/* we want to use vuforia for this story */
 &lt;&lt;initVuforia &quot;http://philkt.me/understanding-ar-twine/key.txt&quot;&gt;&gt;
 &lt;&lt;vuforiaDataset storybook &quot;http://philkt.me/undertanding-ar-twine/datasets/storybook.xml&quot;&gt;&gt;
 
-&lt;&lt;set $trackables to {}&gt;&gt;
+&lt;&lt;set $trackables to {}&gt;&gt; 
 &lt;&lt;set $trackableKeys to []&gt;&gt;
 &lt;&lt;set $trackablesFound to 0&gt;&gt;
 &lt;&lt;set $onPages = []&gt;&gt;
@@ -2210,18 +2067,21 @@ Config.saves.autoload = false;
 
 &lt;&lt;/addAsset&gt;&gt;
 
+
+hi
+
 </tw-passagedata>
 </tw-storydata>
 </div>
 	<script id="script-sugarcube" type="text/javascript">
 	/*! OldFashioned JS
 
-	OldFashioned is based on SugarCube.  It includes code from argon.js (argonjs.io)
-	and AFrame (aframe.io), both of which have licenses on their respective sites.
-
+	OldFashioned is based on SugarCube.  It includes code from argon.js (argonjs.io) 
+	and AFrame (aframe.io), both of which have licenses on their respective sites.  
+	
 	argon.js is licences under an Apache2.0 license, and AFrame is licensed under an
 	MIT license.
-
+ 		
 	OldFashioned icon created by Oliviu Stoian, downloaded from the Noun Project
 	at https://thenounproject.com/term/whiskey-glass/58605/
 
@@ -15795,7 +15655,7 @@ var AR = function () {
   */
 		var $uiTree = jQuery(document.createDocumentFragment()).append(
 		/* eslint-disable max-len */
-		//					'<ar-scene id="argon-aframe">'
+		//					'<ar-scene id="argon-aframe">' 
 		'  <a-entity id="story-entities">' + '  </a-entity>' + '  <a-entity id="passage-entities">' + '  </a-entity>'
 		//				  + '</ar-scene>'
 		/* eslint-enable max-len */
@@ -15825,7 +15685,7 @@ var AR = function () {
 		//$uiTree.insertBefore('#store-area');
 
 		/*
-  	Set up the scene for AR.
+  	Set up the scene for AR.  
   */
 		_$hud.find("#passages").addClass("passages-ar");
 		_$hud.find("#story").addClass("story-ar");
