@@ -1523,8 +1523,22 @@ html.debug-view .debug[data-name][data-type|="special"]:before {
 	<div id="hud"></div>
 	<ar-scene id="argon-aframe">
 	</ar-scene>
-	<div id="store-area" hidden><tw-storydata name="understanding-ar" startnode="1" creator="Twine" creator-version="2.0.11" ifid="65CD69EF-27B2-4D0A-9464-A2006DEAE27C" format="OldFashioned" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
-
+	<div id="store-area" hidden><tw-storydata name="understanding-ar" startnode="1" creator="Twine" creator-version="2.0.11" ifid="65CD69EF-27B2-4D0A-9464-A2006DEAE27C" format="OldFashioned" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">.blurb
+{
+	position: absolute;
+	bottom: 10px;
+	margin: 9, auto;
+  left: 25%;
+	width: 50%;
+	text-align: center;
+	color: rgb(127,255,255);
+	background: rgb(255,255,255);
+	outline: 3px solid rgba(127,255,255,0.5);
+	border: 0px;
+	padding: 15px;    
+  display: inline-block;
+  font-size: 24px;
+}
 
 
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">Config.ui.stowBarInitially = true; 
@@ -1902,7 +1916,8 @@ Macro.add(['removeHUD','showHUD','hideHUD'], {
 });
 
 
-</script><tw-passagedata pid="1" name="Start" tags="" position="239.0001,316">
+
+</script><tw-passagedata pid="1" name="Start" tags="" position="239,316">
 &lt;center&gt;
 &lt;h2&gt;Understanding AR&lt;/h2&gt;
 &lt;/center&gt;
@@ -2103,6 +2118,9 @@ Config.saves.autoload = false;
         &lt;a-entity obj-model=&quot;obj: #damocles-obj; mtl: #damocles-mtl&quot;&gt;&lt;/a-entity&gt;
 
        &lt;/a-entity&gt;
+	   &lt;div class=&quot;blurb&quot;&gt;
+	   Developed by Ivan Sutherland, the Sword of Damocles was the first AR headset. It was placed on top of a man&#39;s head and suspended by from the ceiling by a pole because of its weight. The creation of the Sword of Damocles was considered as the birth of AR.
+	   &lt;/div&gt;
 	  
 &lt;&lt;/append3d&gt;&gt;
 &lt;&lt;/if&gt;&gt;
