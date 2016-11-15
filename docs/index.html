@@ -1549,6 +1549,7 @@ html.debug-view .debug[data-name][data-type|="special"]:before {
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">Config.ui.stowBarInitially = true; 
 Config.saves.autoload = false;
 Config.saves.autosave = false;
@@ -1926,6 +1927,7 @@ Macro.add(['removeHUD','showHUD','hideHUD'], {
 
 
 
+
 </script><tw-passagedata pid="1" name="Start" tags="" position="567,254">&lt;&lt;set $onPages = [&quot;&quot;]&gt;&gt;
 &lt;center&gt;
 &lt;h2 id=&quot;title&quot;&gt;Understanding AR&lt;/h2&gt;
@@ -2099,7 +2101,7 @@ Config.saves.autoload = false;
         &lt;a-asset-item id=&quot;videoplace-mtl&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/videoplace/videplace.mtl&quot;&gt;&lt;/a-asset-item&gt;
 
 &lt;&lt;/addAsset&gt;&gt;</tw-passagedata>
-<tw-passagedata pid="3" name="damocles" tags="" position="450.00019999999995,3">&lt;&lt;set $onPages = [&quot;damocles&quot;]&gt;&gt;
+<tw-passagedata pid="3" name="damocles" tags="" position="450,3">&lt;&lt;set $onPages = [&quot;damocles&quot;]&gt;&gt;
 &lt;h3&gt;Sword of Damocles&lt;/h3&gt;
 &lt;div class=&quot;blurb&quot;&gt;[[The Sword of Damocles was created in 1968 by Ivan Sutherland. It was considered the world’s first augmented virtual reality headset. The design and UI was considered primitive as it was not a fully immersive AR experience. |damocles-2]]
 &lt;/div&gt;&lt;&lt;nobr&gt;&gt;
@@ -2246,7 +2248,7 @@ Config.saves.autoload = false;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;
 </tw-passagedata>
-<tw-passagedata pid="8" name="videoplace-2" tags="" position="700.0002,118">&lt;&lt;set $onPages = [&quot;videoplace&quot;]&gt;&gt;
+<tw-passagedata pid="8" name="videoplace-2" tags="" position="700,118">&lt;&lt;set $onPages = [&quot;videoplace&quot;]&gt;&gt;
 &lt;h3&gt;Videoplace&lt;/h3&gt;
 &lt;div class=&quot;blurb&quot;&gt;[[The Videoplace used projectors, video camers, some special hardware, and onscreen silhouetttes to place people in an interactive environment on a screen, which allowed users in separate rooms to interact with one another. People could interact with objects on the screen which gave them a sense of precense even though they received no direct physical feedback. The Videoplace is permanently displayed at the University of Connecticut.|Start]]&lt;/div&gt;&lt;&lt;nobr&gt;&gt;
 &lt;&lt;set _tObject to $trackables[&quot;videoplace&quot;]&gt;&gt;
@@ -2300,7 +2302,7 @@ Config.saves.autoload = false;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;
 </tw-passagedata>
-<tw-passagedata pid="10" name="damocles-2" tags="" position="575.0005999999998,40">&lt;&lt;set $onPages = [&quot;damocles&quot;]&gt;&gt;
+<tw-passagedata pid="10" name="damocles-2" tags="" position="575,40">&lt;&lt;set $onPages = [&quot;damocles&quot;]&gt;&gt;
 &lt;h3&gt;Sword of Damocles&lt;/h3&gt;
 &lt;div class=&quot;blurb&quot;&gt;[[It was so heavy when placed on the user’s head that it had to be suspended by a pole connected to the ceiling so that it wouldn’t hurt the user. While early in development, the Sword of Damocles inspired future creations, such as the Oculus Rift.|Start]]
 &lt;/div&gt;&lt;&lt;nobr&gt;&gt;
@@ -2332,7 +2334,7 @@ Config.saves.autoload = false;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;
 </tw-passagedata>
-<tw-passagedata pid="11" name="artoolkit-2" tags="" position="450.0003999999999,128">&lt;&lt;set $onPages = [&quot;artoolkit&quot;]&gt;&gt;
+<tw-passagedata pid="11" name="artoolkit-2" tags="" position="450,128">&lt;&lt;set $onPages = [&quot;artoolkit&quot;]&gt;&gt;
 &lt;h3&gt;AR Toolkit&lt;/h3&gt;
 &lt;div class=&quot;blurb&quot;&gt;
 [[This library allowed them to software to calculate the camera position and orientation so as to overlay a virtual object onto the real world camera. To this day, it is still used to compliment other AR libraries.|Start]]
@@ -2389,6 +2391,44 @@ Config.saves.autoload = false;
        &lt;/a-entity&gt;
 	  
 &lt;&lt;/append3d&gt;&gt;
+
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
+</tw-passagedata>
+<tw-passagedata pid="13" name="eyetap" tags="" position="602,402">&lt;&lt;set $onPages = [&quot;eyetap&quot;]&gt;&gt;
+&lt;h3&gt;Eyetap&lt;/h3&gt;
+&lt;div class=&quot;blurb&quot;&gt;[[Developed by Steve Mann, the original eyetap was a computer in a backpack that was attached to a camera and screwed into a helmet. After many iterations, the device became lighter and smaller. |Start]]&lt;/div&gt;&lt;&lt;nobr&gt;&gt;
+&lt;&lt;set _tObject to $trackables[&quot;eyetap&quot;]&gt;&gt;
+&lt;&lt;set _tn to _tObject.entityName&gt;&gt;
+&lt;&lt;set _ts to _tObject.selector&gt;&gt;
+
+
+&lt;&lt;if _tObject.initPassage&gt;&gt;
+&lt;&lt;else&gt;&gt;
+  &lt;&lt;set _tObject.initPassage to true&gt;&gt;
+
+
+
+
+
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
+</tw-passagedata>
+<tw-passagedata pid="14" name="Argon" tags="" position="477,383.5">&lt;&lt;set $onPages = [&quot;argon&quot;]&gt;&gt;
+&lt;h3&gt;Argon&lt;/h3&gt;
+&lt;div class=&quot;blurb&quot;&gt;[[Argon |Start]]&lt;/div&gt;&lt;&lt;nobr&gt;&gt;
+&lt;&lt;set _tObject to $trackables[&quot;argon&quot;]&gt;&gt;
+&lt;&lt;set _tn to _tObject.entityName&gt;&gt;
+&lt;&lt;set _ts to _tObject.selector&gt;&gt;
+
+
+&lt;&lt;if _tObject.initPassage&gt;&gt;
+&lt;&lt;else&gt;&gt;
+  &lt;&lt;set _tObject.initPassage to true&gt;&gt;
+
+
+
+
 
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;
