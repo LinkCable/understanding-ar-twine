@@ -2099,6 +2099,10 @@ Config.saves.autoload = false;
         &lt;a-asset-item id=&quot;pokemongo-mtl&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/pokemon-go/pokemon-go.mtl&quot;&gt;&lt;/a-asset-item&gt;
         &lt;a-asset-item id=&quot;videoplace-obj&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/videoplace/videplace.obj&quot;&gt;&lt;/a-asset-item&gt;
         &lt;a-asset-item id=&quot;videoplace-mtl&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/videoplace/videplace.mtl&quot;&gt;&lt;/a-asset-item&gt;
+		&lt;a-asset-item id=&quot;eyetap-obj&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/eyetap/eyetap.obj&quot;&gt;&lt;/a-asset-item&gt;
+        &lt;a-asset-item id=&quot;eyetap-mtl&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/eyetap/eyetap.mtl&quot;&gt;&lt;/a-asset-item&gt;
+		&lt;a-asset-item id=&quot;argon-obj&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/argon/argon.obj&quot;&gt;&lt;/a-asset-item&gt;
+        &lt;a-asset-item id=&quot;argon-mtl&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/argon/argon.mtl&quot;&gt;&lt;/a-asset-item&gt;
 
 &lt;&lt;/addAsset&gt;&gt;</tw-passagedata>
 <tw-passagedata pid="3" name="damocles" tags="" position="450,3">&lt;&lt;set $onPages = [&quot;damocles&quot;]&gt;&gt;
@@ -2408,13 +2412,23 @@ Config.saves.autoload = false;
   &lt;&lt;set _tObject.initPassage to true&gt;&gt;
 
 
+&lt;&lt;append3d _tn&gt;&gt;
+	
 
+       &lt;a-entity scale=&quot;0.03 0.03 0.03&quot;&gt;
+
+
+        &lt;a-entity obj-model=&quot;obj: #eyetap-obj; mtl: #eyetap-mtl&quot;&gt;&lt;/a-entity&gt;
+
+       &lt;/a-entity&gt;
+	  
+&lt;&lt;/append3d&gt;&gt;
 
 
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;
 </tw-passagedata>
-<tw-passagedata pid="14" name="Argon" tags="" position="477,383.5">&lt;&lt;set $onPages = [&quot;argon&quot;]&gt;&gt;
+<tw-passagedata pid="14" name="argon" tags="" position="477,383.5">&lt;&lt;set $onPages = [&quot;argon&quot;]&gt;&gt;
 &lt;h3&gt;Argon&lt;/h3&gt;
 &lt;div class=&quot;blurb&quot;&gt;[[Argon |Start]]&lt;/div&gt;&lt;&lt;nobr&gt;&gt;
 &lt;&lt;set _tObject to $trackables[&quot;argon&quot;]&gt;&gt;
@@ -2426,7 +2440,17 @@ Config.saves.autoload = false;
 &lt;&lt;else&gt;&gt;
   &lt;&lt;set _tObject.initPassage to true&gt;&gt;
 
+&lt;&lt;append3d _tn&gt;&gt;
+	
 
+       &lt;a-entity scale=&quot;0.03 0.03 0.03&quot;&gt;
+
+
+        &lt;a-entity obj-model=&quot;obj: #argon-obj; mtl: #argon-mtl&quot;&gt;&lt;/a-entity&gt;
+
+       &lt;/a-entity&gt;
+	  
+&lt;&lt;/append3d&gt;&gt;
 
 
 
