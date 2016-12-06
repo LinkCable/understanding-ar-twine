@@ -1,7 +1,7 @@
 # Understanding AR
 ### An augmented reality storybook about the development of augmented reality
 
-Developed for the [Augmented Environments Lab](http://ael.gatech.edu/lab/), Understanding AR is a physical storybook that
+Developed for the [Augmented Environments Lab](http://ael.gatech.edu/lab/), Understanding AR is a physical storybook inspired by Understanding Comics: The Invisible Art by Scott McCloud that
 requires the use of a phone to read. Using [Argon.js](http://argonjs.io/) and [Twine](https://twinery.org/), you can discover the history of augmented reality from the
 original creation of the Sword of Damacles to the recent phenomenon of Pokemon Go. Simply visit [the project's webite](http://philkt.me/understanding-ar-twine) on
 your phone using the Argon browser, look at a story image, and a rendered 3D model of the picture will appear, along with
