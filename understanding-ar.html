@@ -1525,6 +1525,32 @@ html.debug-view .debug[data-name][data-type|="special"]:before {
 	</ar-scene>
 	<div id="store-area" hidden><tw-storydata name="understanding-ar" startnode="1" creator="Twine" creator-version="2.0.11" ifid="65CD69EF-27B2-4D0A-9464-A2006DEAE27C" format="OldFashioned" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
 
+#learn {
+	text-align: center;
+}
+
+
+.blurb
+{
+	position: absolute;
+	bottom: 10px;
+	margin: 9, auto;
+	left: 10%;
+	width: 75%
+	text-align: center;
+	color: rgb(0,0,0);
+	background: rgb(255,255,255);
+	outline: 3px solid rgba(127,255,255,0.5);
+	border: 0px;
+	padding: 15px;    
+  display: inline-block;
+  font-size: 14px;
+}
+
+
+
+
+
 
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">Config.ui.stowBarInitially = true; 
 Config.saves.autoload = false;
@@ -1900,12 +1926,18 @@ Macro.add(['removeHUD','showHUD','hideHUD'], {
 		}
 });
 
-</script><tw-passagedata pid="1" name="Start" tags="" position="512,300">
+
+
+
+
+
+
+</script><tw-passagedata pid="1" name="Start" tags="" position="567,254">&lt;&lt;set $onPages = [&quot;&quot;]&gt;&gt;
 &lt;center&gt;
-&lt;h2&gt;Sword of Damocles&lt;/h2&gt;
+&lt;h2 id=&quot;title&quot;&gt;Understanding AR&lt;/h2&gt;
 &lt;/center&gt;
 
-Follow the digital trail from the paper brochure to digital world. Learn more about the people, projects and ideas that make up the GVU research community.
+&lt;p id=&quot;learn&quot;&gt;Let&#39;s learn about the history of AR!&lt;/p&gt;
 
 &lt;p id=&quot;message&quot;&gt;&lt;em&gt;Loading ...&lt;/em&gt;&lt;/p&gt;
 
@@ -1914,11 +1946,6 @@ Follow the digital trail from the paper brochure to digital world. Learn more ab
 /* create a spinner to show while loading */
 &lt;&lt;createReferenceFrameEntity spinningbox passage ar.user&gt;&gt;
 &lt;&lt;createHUD &quot;hudElem&quot; &quot;hudElem2&quot;&gt;&gt;
-
-&lt;&lt;append3d spinningbox&gt;&gt;
-&lt;a-box position=&quot;0 3 -10&quot; radius=&quot;0.25&quot; color=&quot;gold&quot; rotation=&quot;0 0 45&quot;&gt;
-&lt;a-animation attribute=&quot;rotation&quot; from=&quot;0 0 45&quot; to=&quot;0 360 45&quot; dur=&quot;1000&quot; easing=&quot;ease-in-out&quot; repeat=&quot;indefinite&quot;&gt;&lt;/a-animation&gt;&lt;/a-box&gt;
-&lt;&lt;/append3d&gt;&gt;
 
 /* if vuforia isn&#39;t available, tell the user we can&#39;t do
    anything on this platform */
@@ -1962,9 +1989,8 @@ Follow the digital trail from the paper brochure to digital world. Learn more ab
 
 &lt;&lt;onEvent vuforiaLoaded passage &quot;#argon-aframe&quot; argon-vuforia-dataset-loaded &quot;_evt&quot;&gt;&gt;
 &lt;&lt;replace &quot;#message&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;hideEntity spinningbox&gt;&gt;
-&lt;&lt;append &quot;#hudElem&quot;&gt;&gt;Look at the brochure to begin&lt;&lt;/append&gt;&gt;
-&lt;&lt;append &quot;#hudElem2&quot;&gt;&gt;Look at the brochure to begin&lt;&lt;/append&gt;&gt;
+&lt;&lt;append &quot;#hudElem&quot;&gt;&gt;Look at a symbol to begin&lt;&lt;/append&gt;&gt;
+&lt;&lt;append &quot;#hudElem2&quot;&gt;&gt;Look at a symbol to begin&lt;&lt;/append&gt;&gt;
 &lt;&lt;addclass &quot;#hudElem&quot; topScreen&gt;&gt;
 &lt;&lt;addclass &quot;#hudElem2&quot; topScreen&gt;&gt;
 
@@ -1981,6 +2007,8 @@ Follow the digital trail from the paper brochure to digital world. Learn more ab
 	&lt;&lt;set _tTarget to &quot;vuforia.storybook.&quot;+_t&gt;&gt;
 	&lt;&lt;set _tSelector to &quot;#&quot;+_tEntity&gt;&gt;
 	&lt;&lt;set _tName to &quot;targetStatus-&quot;+_t&gt;&gt;
+	
+	&lt;&lt;set _tPassage to _t&gt;&gt; 
 
 	&lt;&lt;set _tObject.entityName to _tEntity&gt;&gt;
 	&lt;&lt;set _tObject.triggerName to _tTrigger&gt;&gt;
@@ -2000,6 +2028,9 @@ Follow the digital trail from the paper brochure to digital world. Learn more ab
 
 &lt;&lt;script&gt;&gt;
 $(&quot;#ttttttt&quot;).attr(&quot;id&quot;, TempVariables.ttt);
+
+
+
 &lt;&lt;/script&gt;&gt;
 
 &lt;&lt;set _tempStr to &quot;css-object=&#39;div:#gvulink-&quot; + _t + &quot;&#39;&quot;&gt;&gt;
@@ -2037,8 +2068,9 @@ $(&quot;#ttttttt&quot;).attr(&quot;id&quot;, TempVariables.ttt);
     &lt;&lt;addclass &quot;#hudElem2&quot; hide&gt;&gt;
 	&lt;&lt;if not _rfc_stay&gt;&gt;
 		&lt;&lt;if _rfcGoto isnot null&gt;&gt;
-		   &lt;&lt;replace &quot;#hudElem&quot;&gt;&gt;Look at the brochure&lt;&lt;/replace&gt;&gt;
-		   &lt;&lt;replace &quot;#hudElem2&quot;&gt;&gt;Look at the brochure&lt;&lt;/replace&gt;&gt;
+		   &lt;&lt;replace &quot;#hudElem&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+		   &lt;&lt;replace &quot;#hudElem2&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+		  
 			&lt;&lt;goto _rfcGoto.passageName&gt;&gt;
 		&lt;&lt;/if&gt;&gt;
     &lt;&lt;/if&gt;&gt;
@@ -2048,7 +2080,7 @@ $(&quot;#ttttttt&quot;).attr(&quot;id&quot;, TempVariables.ttt);
 &lt;&lt;/for&gt;&gt;	
 &lt;&lt;/onEvent&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;</tw-passagedata>
-<tw-passagedata pid="2" name="StoryInit" tags="" position="364,274">/* we want to use vuforia for this story */
+<tw-passagedata pid="2" name="StoryInit" tags="" position="91,256">/* we want to use vuforia for this story */
 &lt;&lt;initVuforia &quot;http://philkt.me/understanding-ar-twine/key.txt&quot;&gt;&gt;
 &lt;&lt;vuforiaDataset storybook &quot;http://philkt.me/understanding-ar-twine/datasets/storybook.xml&quot;&gt;&gt;
 
@@ -2061,15 +2093,486 @@ Config.saves.autoload = false;
 
 &lt;&lt;addAsset&gt;&gt;
 
-&lt;a-asset-item id=&quot;damocles-obj&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/damocles/damocles.obj&quot;&gt;&lt;/a-asset-item&gt;
+        &lt;a-asset-item id=&quot;damocles-obj&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/damocles/damocles.obj&quot;&gt;&lt;/a-asset-item&gt;
+        &lt;a-asset-item id=&quot;damocles-mtl&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/damocles/damocles.mtl&quot;&gt;&lt;/a-asset-item&gt;
+        &lt;a-asset-item id=&quot;artoolkit-obj&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/artoolkit/artoolkit.obj&quot;&gt;&lt;/a-asset-item&gt;
+        &lt;a-asset-item id=&quot;artoolkit-mtl&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/artoolkit/artoolkit.mtl&quot;&gt;&lt;/a-asset-item&gt;
+        &lt;a-asset-item id=&quot;googleglass-obj&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/google-glass/google-glass.obj&quot;&gt;&lt;/a-asset-item&gt;
+        &lt;a-asset-item id=&quot;googleglass-mtl&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/google-glass/google-glass.mtl&quot;&gt;&lt;/a-asset-item&gt;
+        &lt;a-asset-item id=&quot;pokemongo-obj&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/pokemon-go/pokemon-go.obj&quot;&gt;&lt;/a-asset-item&gt;
+        &lt;a-asset-item id=&quot;pokemongo-mtl&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/pokemon-go/pokemon-go.mtl&quot;&gt;&lt;/a-asset-item&gt;
+        &lt;a-asset-item id=&quot;videoplace-obj&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/videoplace/videplace.obj&quot;&gt;&lt;/a-asset-item&gt;
+        &lt;a-asset-item id=&quot;videoplace-mtl&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/videoplace/videplace.mtl&quot;&gt;&lt;/a-asset-item&gt;
+		&lt;a-asset-item id=&quot;eyetap-obj&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/eyetap/eyetap.obj&quot;&gt;&lt;/a-asset-item&gt;
+        &lt;a-asset-item id=&quot;eyetap-mtl&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/eyetap/eyetap.mtl&quot;&gt;&lt;/a-asset-item&gt;
+		&lt;a-asset-item id=&quot;argon-obj&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/argon/argon.obj&quot;&gt;&lt;/a-asset-item&gt;
+        &lt;a-asset-item id=&quot;argon-mtl&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/argon/argon.mtl&quot;&gt;&lt;/a-asset-item&gt;
+		&lt;a-asset-item id=&quot;fixtures-obj&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/fixture/fixture.obj&quot;&gt;&lt;/a-asset-item&gt;
+        &lt;a-asset-item id=&quot;fixtures-mtl&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/fixture/fixture.mtl&quot;&gt;&lt;/a-asset-item&gt;
+		&lt;a-asset-item id=&quot;quake-obj&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/quake/quake.obj&quot;&gt;&lt;/a-asset-item&gt;
+        &lt;a-asset-item id=&quot;quake-mtl&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/quake/quake.mtl&quot;&gt;&lt;/a-asset-item&gt;
+&lt;&lt;/addAsset&gt;&gt;</tw-passagedata>
+<tw-passagedata pid="3" name="damocles" tags="" position="375,0">&lt;&lt;set $onPages = [&quot;damocles&quot;]&gt;&gt;
+&lt;h3&gt;Sword of Damocles&lt;/h3&gt;
+&lt;div class=&quot;blurb&quot;&gt;[[The Sword of Damocles was created in 1968 by Ivan Sutherland. It was considered the world’s first augmented virtual reality headset. The design and UI was considered primitive as it was not a fully immersive AR experience. |damocles-2]]
+&lt;/div&gt;&lt;&lt;nobr&gt;&gt;
+&lt;&lt;set _tObject to $trackables[&quot;damocles&quot;]&gt;&gt;
+&lt;&lt;set _tn to _tObject.entityName&gt;&gt;
+&lt;&lt;set _ts to _tObject.selector&gt;&gt;
 
-&lt;a-asset-item id=&quot;damocles-mtl&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/damocles/damocles.mtl&quot;&gt;&lt;/a-asset-item&gt;
 
-&lt;&lt;/addAsset&gt;&gt;
+&lt;&lt;if _tObject.initPassage&gt;&gt;
+&lt;&lt;else&gt;&gt;
+  &lt;&lt;set _tObject.initPassage to true&gt;&gt;
 
 
-hi
+&lt;&lt;append3d _tn&gt;&gt;
+	
 
+       &lt;a-entity scale=&quot;0.03 0.03 0.03&quot;&gt;
+
+
+        &lt;a-entity obj-model=&quot;obj: #damocles-obj; mtl: #damocles-mtl&quot;&gt;&lt;/a-entity&gt;
+
+       &lt;/a-entity&gt;
+
+
+&lt;&lt;/append3d&gt;&gt;
+
+
+
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
+</tw-passagedata>
+<tw-passagedata pid="4" name="artoolkit" tags="" position="269,121">&lt;&lt;set $onPages = [&quot;artoolkit&quot;]&gt;&gt;
+&lt;h3&gt;AR Toolkit&lt;/h3&gt;
+&lt;div class=&quot;blurb&quot;&gt;
+[[ARToolKit was developed by Hirokazu Kato in 2000. It is an open-source library that overlays computer graphics onto the camera. Developers were able to overcome the problem of calculating the user’s viewpoint in real time.|artoolkit-2]]
+&lt;/div&gt;
+&lt;&lt;nobr&gt;&gt;
+&lt;&lt;set _tObject to $trackables[&quot;artoolkit&quot;]&gt;&gt;
+&lt;&lt;set _tn to _tObject.entityName&gt;&gt;
+&lt;&lt;set _ts to _tObject.selector&gt;&gt;
+
+
+&lt;&lt;if _tObject.initPassage&gt;&gt;
+&lt;&lt;else&gt;&gt;
+  &lt;&lt;set _tObject.initPassage to true&gt;&gt;
+
+
+&lt;&lt;append3d _tn&gt;&gt;
+	
+
+       &lt;a-entity scale=&quot;0.03 0.03 0.03&quot;&gt;
+
+
+        &lt;a-entity obj-model=&quot;obj: #artoolkit-obj; mtl: #artoolkit-mtl&quot;&gt;&lt;/a-entity&gt;
+
+       &lt;/a-entity&gt;
+	  
+&lt;&lt;/append3d&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
+</tw-passagedata>
+<tw-passagedata pid="5" name="googleglass" tags="" position="281,257">&lt;&lt;set $onPages = [&quot;googleglass&quot;]&gt;&gt;
+&lt;h3&gt;Google Glass&lt;/h3&gt;
+&lt;div class=&quot;blurb&quot;&gt;
+[[Google Glass was developed by Google X. Released to the public in 2013, the device resembles eyeglasses and includes a touchpad, a camera, and display. It is activated either by the touchpad or by voice activation, allowing convenience to the user as they go through their day to day.|googleglass-2]]
+&lt;/div&gt;
+&lt;&lt;nobr&gt;&gt;
+&lt;&lt;set _tObject to $trackables[&quot;googleglass&quot;]&gt;&gt;
+&lt;&lt;set _tn to _tObject.entityName&gt;&gt;
+&lt;&lt;set _ts to _tObject.selector&gt;&gt;
+
+
+&lt;&lt;if _tObject.initPassage&gt;&gt;
+&lt;&lt;else&gt;&gt;
+  &lt;&lt;set _tObject.initPassage to true&gt;&gt;
+
+
+&lt;&lt;append3d _tn&gt;&gt;
+	
+
+       &lt;a-entity scale=&quot;0.03 0.03 0.03&quot;&gt;
+
+
+        &lt;a-entity obj-model=&quot;obj: #googleglass-obj; mtl: #googleglass-mtl&quot;&gt;&lt;/a-entity&gt;
+
+       &lt;/a-entity&gt;
+	  
+&lt;&lt;/append3d&gt;&gt;
+
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
+</tw-passagedata>
+<tw-passagedata pid="6" name="pokemongo" tags="" position="871,260">&lt;&lt;set $onPages = [&quot;pokemongo&quot;]&gt;&gt;
+&lt;h3&gt;Pokemon GO&lt;/h3&gt;
+&lt;div class=&quot;blurb&quot;&gt;[[Released in summer of 2016 to immense popularity, Pokemon GO is an AR smartphone app inspired by the Pokemon video game franchise and developed by Niantic Inc, who previously developed an AR game called Ingress. Players can walk around the real world and encounter virtual Pokemon to catch to use in battle.|pokemongo-2]]&lt;/div&gt;&lt;&lt;nobr&gt;&gt;
+&lt;&lt;set _tObject to $trackables[&quot;pokemongo&quot;]&gt;&gt;
+&lt;&lt;set _tn to _tObject.entityName&gt;&gt;
+&lt;&lt;set _ts to _tObject.selector&gt;&gt;
+
+
+&lt;&lt;if _tObject.initPassage&gt;&gt;
+&lt;&lt;else&gt;&gt;
+  &lt;&lt;set _tObject.initPassage to true&gt;&gt;
+
+
+&lt;&lt;append3d _tn&gt;&gt;
+	
+
+       &lt;a-entity scale=&quot;0.03 0.03 0.03&quot;&gt;
+
+
+        &lt;a-entity obj-model=&quot;obj: #pokemongo-obj; mtl: #pokemongo-mtl&quot;&gt;&lt;/a-entity&gt;
+
+       &lt;/a-entity&gt;
+	  
+&lt;&lt;/append3d&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
+</tw-passagedata>
+<tw-passagedata pid="7" name="videoplace" tags="" position="880,0">&lt;&lt;set $onPages = [&quot;videoplace&quot;]&gt;&gt;
+&lt;h3&gt;Videoplace&lt;/h3&gt;
+&lt;div class=&quot;blurb&quot;&gt;[[Established by Myron Krueger in the mid-1970&#39;s, Videoplace was an AR lab created with the vision of an artificual reality that surrounded its users, and responded to their movements and actions without requiring them to wear any peripheral gear like goggles or gloves.|videoplace-2]]&lt;/div&gt;&lt;&lt;nobr&gt;&gt;
+&lt;&lt;set _tObject to $trackables[&quot;videoplace&quot;]&gt;&gt;
+&lt;&lt;set _tn to _tObject.entityName&gt;&gt;
+&lt;&lt;set _ts to _tObject.selector&gt;&gt;
+
+
+&lt;&lt;if _tObject.initPassage&gt;&gt;
+&lt;&lt;else&gt;&gt;
+  &lt;&lt;set _tObject.initPassage to true&gt;&gt;
+
+
+&lt;&lt;append3d _tn&gt;&gt;
+	
+
+       &lt;a-entity scale=&quot;0.03 0.03 0.03&quot;&gt;
+
+
+        &lt;a-entity obj-model=&quot;obj: #videoplace-obj; mtl: #videoplace-mtl&quot;&gt;&lt;/a-entity&gt;
+
+       &lt;/a-entity&gt;
+	  
+&lt;&lt;/append3d&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
+</tw-passagedata>
+<tw-passagedata pid="8" name="videoplace-2" tags="" position="710,0">&lt;&lt;set $onPages = [&quot;videoplace&quot;]&gt;&gt;
+&lt;h3&gt;Videoplace&lt;/h3&gt;
+&lt;div class=&quot;blurb&quot;&gt;[[The Videoplace used projectors, video camers, some special hardware, and onscreen silhouetttes to place people in an interactive environment on a screen, which allowed users in separate rooms to interact with one another. People could interact with objects on the screen which gave them a sense of precense even though they received no direct physical feedback. The Videoplace is permanently displayed at the University of Connecticut.|Start]]&lt;/div&gt;&lt;&lt;nobr&gt;&gt;
+&lt;&lt;set _tObject to $trackables[&quot;videoplace&quot;]&gt;&gt;
+&lt;&lt;set _tn to _tObject.entityName&gt;&gt;
+&lt;&lt;set _ts to _tObject.selector&gt;&gt;
+
+
+&lt;&lt;if _tObject.initPassage&gt;&gt;
+&lt;&lt;else&gt;&gt;
+  &lt;&lt;set _tObject.initPassage to true&gt;&gt;
+
+
+&lt;&lt;append3d _tn&gt;&gt;
+	
+
+       &lt;a-entity scale=&quot;0.03 0.03 0.03&quot;&gt;
+
+
+        &lt;a-entity obj-model=&quot;obj: #videoplace-obj; mtl: #videoplace-mtl&quot;&gt;&lt;/a-entity&gt;
+
+       &lt;/a-entity&gt;
+	  
+&lt;&lt;/append3d&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
+</tw-passagedata>
+<tw-passagedata pid="9" name="pokemongo-2" tags="" position="700,261">&lt;&lt;set $onPages = [&quot;pokemongo&quot;]&gt;&gt;
+&lt;h3&gt;Pokemon GO&lt;/h3&gt;
+&lt;div class=&quot;blurb&quot;&gt;[[Trainers can also visit landmark locations in their local neighborhood to collect items in-game, as well as battle other players with their Pokemon for control of Gyms. Pokemon GO is the most visible and popular AR app to have ever launded and may lead to greater development and players of future AR games to come.|Start]]&lt;/div&gt;&lt;&lt;nobr&gt;&gt;
+&lt;&lt;set _tObject to $trackables[&quot;pokemongo&quot;]&gt;&gt;
+&lt;&lt;set _tn to _tObject.entityName&gt;&gt;
+&lt;&lt;set _ts to _tObject.selector&gt;&gt;
+
+
+&lt;&lt;if _tObject.initPassage&gt;&gt;
+&lt;&lt;else&gt;&gt;
+  &lt;&lt;set _tObject.initPassage to true&gt;&gt;
+
+
+&lt;&lt;append3d _tn&gt;&gt;
+	
+
+       &lt;a-entity scale=&quot;0.03 0.03 0.03&quot;&gt;
+
+
+        &lt;a-entity obj-model=&quot;obj: #pokemongo-obj; mtl: #pokemongo-mtl&quot;&gt;&lt;/a-entity&gt;
+
+       &lt;/a-entity&gt;
+	  
+&lt;&lt;/append3d&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
+</tw-passagedata>
+<tw-passagedata pid="10" name="damocles-2" tags="" position="575,40">&lt;&lt;set $onPages = [&quot;damocles&quot;]&gt;&gt;
+&lt;h3&gt;Sword of Damocles&lt;/h3&gt;
+&lt;div class=&quot;blurb&quot;&gt;[[It was so heavy when placed on the user’s head that it had to be suspended by a pole connected to the ceiling so that it wouldn’t hurt the user. While early in development, the Sword of Damocles inspired future creations, such as the Oculus Rift.|Start]]
+&lt;/div&gt;&lt;&lt;nobr&gt;&gt;
+&lt;&lt;set _tObject to $trackables[&quot;damocles&quot;]&gt;&gt;
+&lt;&lt;set _tn to _tObject.entityName&gt;&gt;
+&lt;&lt;set _ts to _tObject.selector&gt;&gt;
+
+
+&lt;&lt;if _tObject.initPassage&gt;&gt;
+&lt;&lt;else&gt;&gt;
+  &lt;&lt;set _tObject.initPassage to true&gt;&gt;
+
+
+&lt;&lt;append3d _tn&gt;&gt;
+	
+
+       &lt;a-entity scale=&quot;0.03 0.03 0.03&quot;&gt;
+
+
+        &lt;a-entity obj-model=&quot;obj: #damocles-obj; mtl: #damocles-mtl&quot;&gt;&lt;/a-entity&gt;
+
+       &lt;/a-entity&gt;
+
+
+&lt;&lt;/append3d&gt;&gt;
+
+
+
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
+</tw-passagedata>
+<tw-passagedata pid="11" name="artoolkit-2" tags="" position="450,128">&lt;&lt;set $onPages = [&quot;artoolkit&quot;]&gt;&gt;
+&lt;h3&gt;AR Toolkit&lt;/h3&gt;
+&lt;div class=&quot;blurb&quot;&gt;
+[[This library allowed them to software to calculate the camera position and orientation so as to overlay a virtual object onto the real world camera. To this day, it is still used to compliment other AR libraries.|Start]]
+&lt;/div&gt;
+&lt;&lt;nobr&gt;&gt;
+&lt;&lt;set _tObject to $trackables[&quot;artoolkit&quot;]&gt;&gt;
+&lt;&lt;set _tn to _tObject.entityName&gt;&gt;
+&lt;&lt;set _ts to _tObject.selector&gt;&gt;
+
+
+&lt;&lt;if _tObject.initPassage&gt;&gt;
+&lt;&lt;else&gt;&gt;
+  &lt;&lt;set _tObject.initPassage to true&gt;&gt;
+
+
+&lt;&lt;append3d _tn&gt;&gt;
+	
+
+       &lt;a-entity scale=&quot;0.03 0.03 0.03&quot;&gt;
+
+
+        &lt;a-entity obj-model=&quot;obj: #artoolkit-obj; mtl: #artoolkit-mtl&quot;&gt;&lt;/a-entity&gt;
+
+       &lt;/a-entity&gt;
+	  
+&lt;&lt;/append3d&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
+</tw-passagedata>
+<tw-passagedata pid="12" name="googleglass-2" tags="" position="433,261">&lt;&lt;set $onPages = [&quot;googleglass&quot;]&gt;&gt;
+&lt;h3&gt;Google Glass&lt;/h3&gt;
+&lt;div class=&quot;blurb&quot;&gt;
+[[However, due to privacy concerns, the headset has been subject to massive criticism and legislation action. Despite these setbacks, Google Glass has set the trend for wearable devices and Google has filed a new application with the FCC for a new version of the product.|Start]]
+&lt;/div&gt;
+&lt;&lt;nobr&gt;&gt;
+&lt;&lt;set _tObject to $trackables[&quot;googleglass&quot;]&gt;&gt;
+&lt;&lt;set _tn to _tObject.entityName&gt;&gt;
+&lt;&lt;set _ts to _tObject.selector&gt;&gt;
+
+
+&lt;&lt;if _tObject.initPassage&gt;&gt;
+&lt;&lt;else&gt;&gt;
+  &lt;&lt;set _tObject.initPassage to true&gt;&gt;
+
+
+&lt;&lt;append3d _tn&gt;&gt;
+	
+
+       &lt;a-entity scale=&quot;0.03 0.03 0.03&quot;&gt;
+
+
+        &lt;a-entity obj-model=&quot;obj: #googleglass-obj; mtl: #googleglass-mtl&quot;&gt;&lt;/a-entity&gt;
+
+       &lt;/a-entity&gt;
+	  
+&lt;&lt;/append3d&gt;&gt;
+
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
+</tw-passagedata>
+<tw-passagedata pid="13" name="eyetap" tags="" position="602,402">&lt;&lt;set $onPages = [&quot;eyetap&quot;]&gt;&gt;
+&lt;h3&gt;Eyetap&lt;/h3&gt;
+&lt;div class=&quot;blurb&quot;&gt;[[Developed by Steve Mann, the original eyetap was a computer in a backpack that was attached to a camera and screwed into a helmet. After many iterations, the device became lighter and smaller. |Start]]&lt;/div&gt;&lt;&lt;nobr&gt;&gt;
+&lt;&lt;set _tObject to $trackables[&quot;eyetap&quot;]&gt;&gt;
+&lt;&lt;set _tn to _tObject.entityName&gt;&gt;
+&lt;&lt;set _ts to _tObject.selector&gt;&gt;
+
+
+&lt;&lt;if _tObject.initPassage&gt;&gt;
+&lt;&lt;else&gt;&gt;
+  &lt;&lt;set _tObject.initPassage to true&gt;&gt;
+
+
+&lt;&lt;append3d _tn&gt;&gt;
+	
+
+       &lt;a-entity scale=&quot;0.03 0.03 0.03&quot;&gt;
+
+
+        &lt;a-entity obj-model=&quot;obj: #eyetap-obj; mtl: #eyetap-mtl&quot;&gt;&lt;/a-entity&gt;
+
+       &lt;/a-entity&gt;
+	  
+&lt;&lt;/append3d&gt;&gt;
+
+
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
+</tw-passagedata>
+<tw-passagedata pid="14" name="argon" tags="" position="477,383">&lt;&lt;set $onPages = [&quot;argon&quot;]&gt;&gt;
+&lt;h3&gt;Argon&lt;/h3&gt;
+&lt;div class=&quot;blurb&quot;&gt;[[Argon |Start]]&lt;/div&gt;&lt;&lt;nobr&gt;&gt;
+&lt;&lt;set _tObject to $trackables[&quot;argon&quot;]&gt;&gt;
+&lt;&lt;set _tn to _tObject.entityName&gt;&gt;
+&lt;&lt;set _ts to _tObject.selector&gt;&gt;
+
+
+&lt;&lt;if _tObject.initPassage&gt;&gt;
+&lt;&lt;else&gt;&gt;
+  &lt;&lt;set _tObject.initPassage to true&gt;&gt;
+
+&lt;&lt;append3d _tn&gt;&gt;
+	
+
+       &lt;a-entity scale=&quot;0.03 0.03 0.03&quot;&gt;
+
+
+        &lt;a-entity obj-model=&quot;obj: #argon-obj; mtl: #argon-mtl&quot;&gt;&lt;/a-entity&gt;
+
+       &lt;/a-entity&gt;
+	  
+&lt;&lt;/append3d&gt;&gt;
+
+
+
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
+</tw-passagedata>
+<tw-passagedata pid="15" name="virtualfixtures" tags="" position="1012,155">&lt;&lt;set $onPages = [&quot;virtualfixtures&quot;]&gt;&gt;
+&lt;h3&gt;Virtual Fixtures&lt;/h3&gt;
+&lt;div class=&quot;blurb&quot;&gt;[[Developed by Louis Rosenberg in 1992, Virtual Fixtures was considered the first fully immersive Augmented Reality system. The system used two physical robots that were worn by the user. |virtualfixtures-2]]&lt;/div&gt;&lt;&lt;nobr&gt;&gt;
+&lt;&lt;set _tObject to $trackables[&quot;virtualfixtures&quot;]&gt;&gt;
+&lt;&lt;set _tn to _tObject.entityName&gt;&gt;
+&lt;&lt;set _ts to _tObject.selector&gt;&gt;
+
+
+&lt;&lt;if _tObject.initPassage&gt;&gt;
+&lt;&lt;else&gt;&gt;
+  &lt;&lt;set _tObject.initPassage to true&gt;&gt;
+
+
+&lt;&lt;append3d _tn&gt;&gt;
+	
+
+       &lt;a-entity scale=&quot;0.03 0.03 0.03&quot;&gt;
+
+
+        &lt;a-entity obj-model=&quot;obj: #fixtures-obj; mtl: #fixtures-mtl&quot;&gt;&lt;/a-entity&gt;
+
+       &lt;/a-entity&gt;
+	  
+&lt;&lt;/append3d&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
+</tw-passagedata>
+<tw-passagedata pid="16" name="virtualfixtures-2" tags="" position="777,135">&lt;&lt;set $onPages = [&quot;virtualfixtures&quot;]&gt;&gt;
+&lt;h3&gt;Virtual Fixtures&lt;/h3&gt;
+&lt;div class=&quot;blurb&quot;&gt;[[The system also incorporated a binocular magnifier aligned to the user’s view that would display the location of the user’s arms. Virtual Fixtures had physical constraints as the user was using it within its virtual environment. While created in the early 1990s, it still gave the user a fully immersive experience in a virtual world.|Start]]&lt;/div&gt;&lt;&lt;nobr&gt;&gt;
+&lt;&lt;set _tObject to $trackables[&quot;virtualfixtures&quot;]&gt;&gt;
+&lt;&lt;set _tn to _tObject.entityName&gt;&gt;
+&lt;&lt;set _ts to _tObject.selector&gt;&gt;
+
+
+&lt;&lt;if _tObject.initPassage&gt;&gt;
+&lt;&lt;else&gt;&gt;
+  &lt;&lt;set _tObject.initPassage to true&gt;&gt;
+
+
+&lt;&lt;append3d _tn&gt;&gt;
+	
+
+       &lt;a-entity scale=&quot;0.03 0.03 0.03&quot;&gt;
+
+
+        &lt;a-entity obj-model=&quot;obj: #fixtures-obj; mtl: #fixtures-mtl&quot;&gt;&lt;/a-entity&gt;
+
+       &lt;/a-entity&gt;
+	  
+&lt;&lt;/append3d&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
+</tw-passagedata>
+<tw-passagedata pid="17" name="arquake" tags="" position="966,464">&lt;&lt;set $onPages = [&quot;arquake&quot;]&gt;&gt;
+&lt;h3&gt;AR Quake&lt;/h3&gt;
+&lt;div class=&quot;blurb&quot;&gt;[[Developed in the Wearable Computing Lab at the University of South Australia, AR Quake is an augmented reality version of the game Quake. It was designed to immerse players in the game by overlaying virtual images onto the real world. |arquake-2]]&lt;/div&gt;&lt;&lt;nobr&gt;&gt;
+&lt;&lt;set _tObject to $trackables[&quot;arquake&quot;]&gt;&gt;
+&lt;&lt;set _tn to _tObject.entityName&gt;&gt;
+&lt;&lt;set _ts to _tObject.selector&gt;&gt;
+
+
+&lt;&lt;if _tObject.initPassage&gt;&gt;
+&lt;&lt;else&gt;&gt;
+  &lt;&lt;set _tObject.initPassage to true&gt;&gt;
+
+
+&lt;&lt;append3d _tn&gt;&gt;
+	
+
+       &lt;a-entity scale=&quot;0.03 0.03 0.03&quot;&gt;
+
+
+        &lt;a-entity obj-model=&quot;obj: #quake-obj; mtl: #quake-mtl&quot;&gt;&lt;/a-entity&gt;
+
+       &lt;/a-entity&gt;
+	  
+&lt;&lt;/append3d&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
+</tw-passagedata>
+<tw-passagedata pid="18" name="arquake-2" tags="" position="793,407">&lt;&lt;set $onPages = [&quot;arquake&quot;]&gt;&gt;
+&lt;h3&gt;AR Quake&lt;/h3&gt;
+&lt;div class=&quot;blurb&quot;&gt;[[&lt;&lt;set $onPages = [&quot;virtualfixtures&quot;]&gt;&gt;
+&lt;h3&gt;Virtual Fixtures&lt;/h3&gt;
+&lt;div class=&quot;blurb&quot;&gt;[[The system also incorporated a binocular magnifier aligned to the user’s view that would display the location of the user’s arms. Virtual Fixtures had physical constraints as the user was using it within its virtual environment. While created in the early 1990s, it still gave the user a fully immersive experience in a virtual world.|Start]]&lt;/div&gt;&lt;&lt;nobr&gt;&gt;
+&lt;&lt;set _tObject to $trackables[&quot;arquake&quot;]&gt;&gt;
+&lt;&lt;set _tn to _tObject.entityName&gt;&gt;
+&lt;&lt;set _ts to _tObject.selector&gt;&gt;
+
+
+&lt;&lt;if _tObject.initPassage&gt;&gt;
+&lt;&lt;else&gt;&gt;
+  &lt;&lt;set _tObject.initPassage to true&gt;&gt;
+
+
+&lt;&lt;append3d _tn&gt;&gt;
+	
+
+       &lt;a-entity scale=&quot;0.03 0.03 0.03&quot;&gt;
+
+
+        &lt;a-entity obj-model=&quot;obj: #quake-obj; mtl: #quake-mtl&quot;&gt;&lt;/a-entity&gt;
+
+       &lt;/a-entity&gt;
+	  
+&lt;&lt;/append3d&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
 </tw-passagedata>
 </tw-storydata>
 </div>
