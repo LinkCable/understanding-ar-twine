@@ -1,7 +1,7 @@
-# Blender MTL File: 'pkmn.blend'
-# Material Count: 7
+# Blender MTL File: 'XY_PikachuM.blend'
+# Material Count: 4
 
-newmtl Material__160.001
+newmtl Material__160
 Ns 0.000000
 Ka 1.000000 1.000000 1.000000
 Kd 0.470400 0.470400 0.470400
@@ -10,7 +10,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Kd ./Textures/pm0025_00_BodyA1.png
+map_Kd /Textures/pm0025_00_BodyA1.png
 
 newmtl Material__161
 Ns 0.000000
@@ -21,9 +21,9 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Kd ./Textures/pm0025_00_BodyB1.png
+map_Kd /Textures/pm0025_00_BodyB1.png
 
-newmtl Material__162.001
+newmtl Material__162
 Ns 0.000000
 Ka 1.000000 1.000000 1.000000
 Kd 0.470400 0.470400 0.470400
@@ -32,9 +32,9 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Kd ./Textures/pm0025_00_Mouth1.png
+map_Kd /Textures/pm0025_00_Mouth1.png
 
-newmtl Material__163.001
+newmtl Material__163
 Ns 0.000000
 Ka 1.000000 1.000000 1.000000
 Kd 0.470400 0.470400 0.470400
@@ -43,34 +43,4 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Kd ./Textures/pm0025_00_Eye1.png
-
-newmtl VR_Gray
-Ns 94.117647
-Ka 0.000000 0.000000 0.000000
-Kd 0.290000 0.290000 0.290000
-Ks 0.000000 0.000000 0.000000
-Ke 0.000000 0.000000 0.000000
-Ni 1.000000
-d 1.000000
-illum 2
-
-newmtl VR_Red
-Ns 94.117647
-Ka 0.000000 0.000000 0.000000
-Kd 1.000000 0.000000 0.000000
-Ks 0.066667 0.066667 0.066667
-Ke 0.000000 0.000000 0.000000
-Ni 1.000000
-d 1.000000
-illum 2
-
-newmtl VR_White
-Ns 94.117647
-Ka 0.000000 0.000000 0.000000
-Kd 1.000000 1.000000 1.000000
-Ks 0.066667 0.066667 0.066667
-Ke 0.000000 0.000000 0.000000
-Ni 1.000000
-d 1.000000
-illum 2
+map_Kd /Textures/pm0025_00_Eye1.png
