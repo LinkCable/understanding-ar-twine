@@ -29,3 +29,4 @@ Once you click through, we return to the deafualt state until a new image is rec
 * [Philippe Kimura-Thollander](http://philkt.me)
 * [Victoria Chai](http://victoriachai.me)
 * Under the direction of [Jay Bolter](http://www.jdbolter.net/)
+* [Blair MacIntyre](https://blairmacintyre.me/) for [the original storybook code](https://github.com/blairmacintyre/oldfashioned) as well as Argon itself
