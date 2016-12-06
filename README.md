@@ -15,7 +15,7 @@ Software used in this project:
 
 ### How it works
 Using the Vuforia database, once an image is recognized we use the capabilities in Argon and Twine to redirect to the appropriate passage and render a 3D model.
-Once you click through, we return to the deafualt state until a new image is recognized.
+Once you click through, we return to the default state until a new image is recognized.
 
 
 ### To edit this project
