@@ -1,46 +1,26 @@
-# Blender MTL File: 'None'
-# Material Count: 4
+# Blender MTL File: 'BR_Bulbasaur.blend'
+# Material Count: 2
 
-newmtl Material_#160
-Ns 17.647059
+newmtl mat_0
+Ns 92.156863
 Ka 1.000000 1.000000 1.000000
-Kd 0.470400 0.470400 0.470400
-Ks 0.000000 0.000000 0.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.250000 0.250000 0.250000
 Ke 0.000000 0.000000 0.000000
 Ni 1.000000
-d 1.000000
+d 0.000000
 illum 2
-map_Kd pm0025_00_BodyA1.png
+map_Kd fushigidane_0_0.tga
+map_d fushigidane_0_0.tga
 
-newmtl Material_#161
-Ns 17.647059
+newmtl mat_1
+Ns 92.156863
 Ka 1.000000 1.000000 1.000000
-Kd 0.470400 0.470400 0.470400
-Ks 0.000000 0.000000 0.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.250000 0.250000 0.250000
 Ke 0.000000 0.000000 0.000000
 Ni 1.000000
-d 1.000000
+d 0.000000
 illum 2
-map_Kd pm0025_00_BodyB1.png
-
-newmtl Material_#162
-Ns 17.647059
-Ka 1.000000 1.000000 1.000000
-Kd 0.470400 0.470400 0.470400
-Ks 0.000000 0.000000 0.000000
-Ke 0.000000 0.000000 0.000000
-Ni 1.000000
-d 1.000000
-illum 2
-map_Kd pm0025_00_Mouth1.png
-
-newmtl Material_#163
-Ns 17.647059
-Ka 1.000000 1.000000 1.000000
-Kd 0.470400 0.470400 0.470400
-Ks 0.000000 0.000000 0.000000
-Ke 0.000000 0.000000 0.000000
-Ni 1.000000
-d 1.000000
-illum 2
-map_Kd pm0025_00_Eye1.png
+map_Kd fushigidane_0_1.tga
+map_d fushigidane_0_1.tga
