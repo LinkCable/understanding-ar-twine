@@ -1533,9 +1533,8 @@ html.debug-view .debug[data-name][data-type|="special"]:before {
 .blurb
 {
 	position: absolute;
-	bottom: 10px;
-	margin: 9, auto;
-	width: 75%
+	bottom: 0px;
+	width: 100%
 	text-align: center;
 	color: rgb(0,0,0);
 	background: rgb(255,255,255);
@@ -1544,6 +1543,11 @@ html.debug-view .debug[data-name][data-type|="special"]:before {
 	padding: 15px;    
   display: inline-block;
   font-size: 14px;
+}
+
+.blurb h3 {
+	text-align: center;
+	margin: 10px auto;
 }
 
 
@@ -2096,22 +2100,34 @@ Config.saves.autoload = false;
 
         &lt;a-asset-item id=&quot;damocles-obj&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/damocles/damocles.obj&quot;&gt;&lt;/a-asset-item&gt;
         &lt;a-asset-item id=&quot;damocles-mtl&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/damocles/damocles.mtl&quot;&gt;&lt;/a-asset-item&gt;
+		
         &lt;a-asset-item id=&quot;artoolkit-obj&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/artoolkit/artoolkit.obj&quot;&gt;&lt;/a-asset-item&gt;
         &lt;a-asset-item id=&quot;artoolkit-mtl&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/artoolkit/artoolkit.mtl&quot;&gt;&lt;/a-asset-item&gt;
+		
         &lt;a-asset-item id=&quot;googleglass-obj&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/google-glass/google-glass.obj&quot;&gt;&lt;/a-asset-item&gt;
-        &lt;a-asset-item id=&quot;googleglass-mtl&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/google-glass/google-glass.mtl&quot;&gt;&lt;/a-asset-item&gt;
+		&lt;a-asset-item id=&quot;googleglass-mtl&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/google-glass/google-glass.mtl&quot;&gt;&lt;/a-asset-item&gt;
+		
+		&lt;a-asset-item id=&quot;hololens-obj&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/hololens/hololens.obj&quot;&gt;&lt;/a-asset-item&gt;
+		&lt;a-asset-item id=&quot;hololens-mtl&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/hololens/hololens.mtl&quot;&gt;&lt;/a-asset-item&gt;
+		
         &lt;a-asset-item id=&quot;pokemongo-obj&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/pokemon-go/pokemon-go.obj&quot;&gt;&lt;/a-asset-item&gt;
         &lt;a-asset-item id=&quot;pokemongo-mtl&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/pokemon-go/pokemon-go.mtl&quot;&gt;&lt;/a-asset-item&gt;
+		
         &lt;a-asset-item id=&quot;videoplace-obj&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/videoplace/videplace.obj&quot;&gt;&lt;/a-asset-item&gt;
         &lt;a-asset-item id=&quot;videoplace-mtl&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/videoplace/videplace.mtl&quot;&gt;&lt;/a-asset-item&gt;
+		
 		&lt;a-asset-item id=&quot;eyetap-obj&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/eyetap/eyetap.obj&quot;&gt;&lt;/a-asset-item&gt;
         &lt;a-asset-item id=&quot;eyetap-mtl&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/eyetap/eyetap.mtl&quot;&gt;&lt;/a-asset-item&gt;
+		
 		&lt;a-asset-item id=&quot;argon-obj&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/argon/argon.obj&quot;&gt;&lt;/a-asset-item&gt;
         &lt;a-asset-item id=&quot;argon-mtl&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/argon/argon.mtl&quot;&gt;&lt;/a-asset-item&gt;
+		
 		&lt;a-asset-item id=&quot;fixtures-obj&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/fixture/fixture.obj&quot;&gt;&lt;/a-asset-item&gt;
         &lt;a-asset-item id=&quot;fixtures-mtl&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/fixture/fixture.mtl&quot;&gt;&lt;/a-asset-item&gt;
+		
 		&lt;a-asset-item id=&quot;quake-obj&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/quake/quake.obj&quot;&gt;&lt;/a-asset-item&gt;
         &lt;a-asset-item id=&quot;quake-mtl&quot; src=&quot;http://philkt.me/understanding-ar-twine/models/quake/quake.mtl&quot;&gt;&lt;/a-asset-item&gt;
+		
 &lt;&lt;/addAsset&gt;&gt;</tw-passagedata>
 <tw-passagedata pid="3" name="damocles" tags="" position="375,0">&lt;&lt;set $onPages = [&quot;damocles&quot;]&gt;&gt;
 &lt;h3&gt;Sword of Damocles&lt;/h3&gt;
@@ -2547,11 +2563,9 @@ Config.saves.autoload = false;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;
 </tw-passagedata>
-<tw-passagedata pid="18" name="arquake-2" tags="" position="773,452">&lt;&lt;set $onPages = [&quot;arquake&quot;]&gt;&gt;
+<tw-passagedata pid="18" name="arquake-2" tags="" position="772,452">&lt;&lt;set $onPages = [&quot;arquake&quot;]&gt;&gt;
 &lt;h3&gt;AR Quake&lt;/h3&gt;
-&lt;div class=&quot;blurb&quot;&gt;[[&lt;&lt;set $onPages = [&quot;arquake&quot;]&gt;&gt;
-&lt;h3&gt;Ar Quake&lt;/h3&gt;
-&lt;div class=&quot;blurb&quot;&gt;[[Users could then play the actual game in the real world!|Start]]&lt;/div&gt;&lt;&lt;nobr&gt;&gt;
+&lt;div class=&quot;blurb&quot;&gt;[[Users could then play the game in the real world! Albeit with a giant backpack on themselves, and no BFG. |Start]]&lt;/div&gt;&lt;&lt;nobr&gt;&gt;
 &lt;&lt;set _tObject to $trackables[&quot;arquake&quot;]&gt;&gt;
 &lt;&lt;set _tn to _tObject.entityName&gt;&gt;
 &lt;&lt;set _ts to _tObject.selector&gt;&gt;
