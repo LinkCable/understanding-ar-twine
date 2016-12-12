@@ -1536,20 +1536,19 @@ html.debug-view .debug[data-name][data-type|="special"]:before {
 	margin: 0 !important;
 	position: absolute;
 	bottom: 0px;
+	left: 0px;
 	width: 100%
 	text-align: center;
 	color: rgb(0,0,0);
 	background: rgb(255,255,255);
 	outline: 3px solid rgba(127,255,255,0.5);
 	border: 0px;
-	padding: 15px;    
   font-size: 14px;
 }
 
-.blurb h3 {
+.blurb b {
+	display: block;
 	text-align: center;
-	margin: 0;
-	padding: 0;
 }
 
 
@@ -2425,9 +2424,9 @@ Config.saves.autoload = false;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;
 </tw-passagedata>
-<tw-passagedata pid="13" name="eyetap" tags="" position="446,475">&lt;&lt;set $onPages = [&quot;eyetap&quot;]&gt;&gt;
+<tw-passagedata pid="13" name="eyetap" tags="" position="446,476">&lt;&lt;set $onPages = [&quot;eyetap&quot;]&gt;&gt;
 &lt;div class=&quot;blurb&quot;&gt;
-&lt;h3&gt;Eyetap&lt;/h3&gt;
+&lt;b&gt;Eyetap&lt;/b&gt;
 [[Developed by Steve Mann, the original eyetap was a computer in a backpack that was attached to a camera and screwed into a helmet. After many iterations, the device became lighter and smaller. |Start]]&lt;/div&gt;&lt;&lt;nobr&gt;&gt;
 &lt;&lt;set _tObject to $trackables[&quot;eyetap&quot;]&gt;&gt;
 &lt;&lt;set _tn to _tObject.entityName&gt;&gt;
@@ -2592,9 +2591,10 @@ Config.saves.autoload = false;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;
 </tw-passagedata>
-<tw-passagedata pid="19" name="hololens" tags="" position="632,565">&lt;&lt;set $onPages = [&quot;hololens&quot;]&gt;&gt;
-&lt;h3&gt;Hololens&lt;/h3&gt;
-&lt;div class=&quot;blurb&quot;&gt;[[A &quot;mixed reality&quot; headset developed by Microsoft and revealed to the world in 2015. The Hololens allows users to see holograpahic prjections on top of the real world, using custom cameras, sensors, and CPUs to make the magic happen. |hololens-2]]&lt;/div&gt;&lt;&lt;nobr&gt;&gt;
+<tw-passagedata pid="19" name="hololens" tags="" position="631,565">&lt;&lt;set $onPages = [&quot;hololens&quot;]&gt;&gt;
+&lt;div class=&quot;blurb&quot;&gt;
+&lt;b&gt;Hololens&lt;/b&gt;
+[[A &quot;mixed reality&quot; headset developed by Microsoft and revealed to the world in 2015. The Hololens allows users to see holograpahic prjections on top of the real world, using custom cameras, sensors, and CPUs to make the magic happen. |hololens-2]]&lt;/div&gt;&lt;&lt;nobr&gt;&gt;
 &lt;&lt;set _tObject to $trackables[&quot;hololens&quot;]&gt;&gt;
 &lt;&lt;set _tn to _tObject.entityName&gt;&gt;
 &lt;&lt;set _ts to _tObject.selector&gt;&gt;
