@@ -5,7 +5,7 @@ Developed for the [Augmented Environments Lab](http://ael.gatech.edu/lab/), Unde
 requires the use of a phone to read. Using [Argon.js](http://argonjs.io/) and [Twine](https://twinery.org/), you can discover the history of augmented reality from the
 original creation of the Sword of Damacles to the recent phenomenon of Pokemon Go. Simply visit [the project's webite](http://philkt.me/understanding-ar-twine) on
 your phone using the Argon browser, look at a story image, and a rendered 3D model of the picture will appear, along with
-explanatory text of why this was an important point in augmented reality history. You can also rpint out your won stroybook using the [pdf](storybook.pdf)
+explanatory text of why this was an important point in augmented reality history. You can also print out your own storybook using the [pdf](storybook.pdf).
 
 Software used in this project:
 * [Argon.js](http://argonjs.io/) for AR on the phone
