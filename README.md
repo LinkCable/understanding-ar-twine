@@ -17,6 +17,9 @@ Software used in this project:
 Using the Vuforia database, once an image is recognized we use the capabilities in Argon and Twine to redirect to the appropriate passage and render a 3D model.
 Once you click through, we return to the default state until a new image is recognized.
 
+### How it looks
+![AR](screenshots/ar.PNG)
+![AR Quake](screenshots/quake.PNG)
 
 ### To edit this project
 1. Clone or download the repo
