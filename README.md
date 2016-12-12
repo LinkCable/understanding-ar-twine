@@ -18,8 +18,8 @@ Using the Vuforia database, once an image is recognized we use the capabilities 
 Once you click through, we return to the default state until a new image is recognized.
 
 ### How it looks
-![AR](screenshots/ar.PNG)
-![AR Quake](screenshots/quake.PNG)
+![AR](screenshots/ar-resized.png)
+![AR Quake](screenshots/quake-resized.png)
 
 ### To edit this project
 1. Clone or download the repo
